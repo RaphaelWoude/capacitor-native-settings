@@ -108,7 +108,6 @@ Opens the specified option in android.
 | **`NfcSharing`**             | <code>'nfcsharing'</code>              |
 | **`NfcPayment`**             | <code>'nfc_payment'</code>             |
 | **`NfcSettings`**            | <code>'nfc_settings'</code>            |
-| **`NotificationId`**         | <code>'notification_id'</code>         |
 | **`Print`**                  | <code>'print'</code>                   |
 | **`Privacy`**                | <code>'privacy'</code>                 |
 | **`QuickLaunch`**            | <code>'quick_launch'</code>            |
@@ -118,7 +117,6 @@ Opens the specified option in android.
 | **`ShowRegulatoryInfo`**     | <code>'show_regulatory_info'</code>    |
 | **`Sound`**                  | <code>'sound'</code>                   |
 | **`Storage`**                | <code>'storage'</code>                 |
-| **`Store`**                  | <code>'store'</code>                   |
 | **`Sync`**                   | <code>'sync'</code>                    |
 | **`Usage`**                  | <code>'usage'</code>                   |
 | **`UserDictionary`**         | <code>'user_dictionary'</code>         |
