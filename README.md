@@ -79,105 +79,104 @@ Opens the specified option in android.
 
 #### AndroidSettings
 
-| Members                      | Value                                  |
-| ---------------------------- | -------------------------------------- |
-| **`Accessibility`**          | <code>'accessibility'</code>           |
-| **`Account`**                | <code>'account'</code>                 |
-| **`AirplaneMode`**           | <code>'airplane_mode'</code>           |
-| **`Apn`**                    | <code>'apn'</code>                     |
-| **`ApplicationDetails`**     | <code>'application_details'</code>     |
-| **`ApplicationDevelopment`** | <code>'application_development'</code> |
-| **`Application`**            | <code>'application'</code>             |
-| **`BatteryOptimization`**    | <code>'battery_optimization'</code>    |
-| **`Bluetooth`**              | <code>'bluetooth'</code>               |
-| **`Captioning`**             | <code>'captioning'</code>              |
-| **`Cast`**                   | <code>'cast'</code>                    |
-| **`DataRoaming`**            | <code>'data_roaming'</code>            |
-| **`Date`**                   | <code>'date'</code>                    |
-| **`Display`**                | <code>'display'</code>                 |
-| **`Dream`**                  | <code>'dream'</code>                   |
-| **`Home`**                   | <code>'home'</code>                    |
-| **`Keyboard`**               | <code>'keyboard'</code>                |
-| **`KeyboardSubType`**        | <code>'keyboard_subtype'</code>        |
-| **`Locale`**                 | <code>'locale'</code>                  |
-| **`Location`**               | <code>'location'</code>                |
-| **`ManageApplications`**     | <code>'manage_applications'</code>     |
-| **`ManageAllApplications`**  | <code>'manage_all_applications'</code> |
-| **`MemoryCard`**             | <code>'memory_card'</code>             |
-| **`Network`**                | <code>'network'</code>                 |
-| **`NfcSharing`**             | <code>'nfcsharing'</code>              |
-| **`NfcPayment`**             | <code>'nfc_payment'</code>             |
-| **`NfcSettings`**            | <code>'nfc_settings'</code>            |
-| **`Print`**                  | <code>'print'</code>                   |
-| **`Privacy`**                | <code>'privacy'</code>                 |
-| **`QuickLaunch`**            | <code>'quick_launch'</code>            |
-| **`Search`**                 | <code>'search'</code>                  |
-| **`Security`**               | <code>'security'</code>                |
-| **`Settings`**               | <code>'settings'</code>                |
-| **`ShowRegulatoryInfo`**     | <code>'show_regulatory_info'</code>    |
-| **`Sound`**                  | <code>'sound'</code>                   |
-| **`Storage`**                | <code>'storage'</code>                 |
-| **`Sync`**                   | <code>'sync'</code>                    |
-| **`Usage`**                  | <code>'usage'</code>                   |
-| **`UserDictionary`**         | <code>'user_dictionary'</code>         |
-| **`VoiceInput`**             | <code>'voice_input'</code>             |
-| **`Wifi`**                   | <code>'wifi'</code>                    |
-| **`WifiIp`**                 | <code>'wifi_ip'</code>                 |
-| **`Wireless`**               | <code>'wireless'</code>                |
+| Members                      | Value                                  | Description                                                                                            |
+| ---------------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| **`Accessibility`**          | <code>'accessibility'</code>           | Show settings for accessibility modules                                                                |
+| **`Account`**                | <code>'account'</code>                 | Show add account screen for creating a new account                                                     |
+| **`AirplaneMode`**           | <code>'airplane_mode'</code>           | Show settings to allow entering/exiting airplane mode                                                  |
+| **`Apn`**                    | <code>'apn'</code>                     | Show settings to allow configuration of APNs                                                           |
+| **`ApplicationDetails`**     | <code>'application_details'</code>     | Show screen of details about a particular application                                                  |
+| **`ApplicationDevelopment`** | <code>'application_development'</code> | Show settings to allow configuration of application development-related settings                       |
+| **`Application`**            | <code>'application'</code>             | Show settings to allow configuration of application-related settings                                   |
+| **`BatteryOptimization`**    | <code>'battery_optimization'</code>    | Show screen for controlling which apps can ignore battery optimizations                                |
+| **`Bluetooth`**              | <code>'bluetooth'</code>               | Show settings to allow configuration of Bluetooth                                                      |
+| **`Captioning`**             | <code>'captioning'</code>              | Show settings for video captioning                                                                     |
+| **`Cast`**                   | <code>'cast'</code>                    | Show settings to allow configuration of cast endpoints                                                 |
+| **`DataRoaming`**            | <code>'data_roaming'</code>            | Show settings for selection of 2G/3G/4G                                                                |
+| **`Date`**                   | <code>'date'</code>                    | Show settings to allow configuration of date and time                                                  |
+| **`Display`**                | <code>'display'</code>                 | Show settings to allow configuration of display                                                        |
+| **`Dream`**                  | <code>'dream'</code>                   | Show Daydream settings                                                                                 |
+| **`Home`**                   | <code>'home'</code>                    | Show Home selection settings                                                                           |
+| **`Keyboard`**               | <code>'keyboard'</code>                | Show settings to configure input methods, in particular allowing the user to enable input methods      |
+| **`KeyboardSubType`**        | <code>'keyboard_subtype'</code>        | Show settings to enable/disable input method subtypes                                                  |
+| **`Locale`**                 | <code>'locale'</code>                  | Show settings to allow configuration of locale                                                         |
+| **`Location`**               | <code>'location'</code>                | Show settings to allow configuration of current location sources                                       |
+| **`ManageApplications`**     | <code>'manage_applications'</code>     | Show settings to manage installed applications                                                         |
+| **`ManageAllApplications`**  | <code>'manage_all_applications'</code> | Show settings to manage all applications                                                               |
+| **`MemoryCard`**             | <code>'memory_card'</code>             | Show settings for memory card storage                                                                  |
+| **`Network`**                | <code>'network'</code>                 | Show settings for selecting the network operator                                                       |
+| **`NfcSharing`**             | <code>'nfcsharing'</code>              | Show NFC Sharing settings                                                                              |
+| **`NfcPayment`**             | <code>'nfc_payment'</code>             | Show NFC Tap & Pay settings                                                                            |
+| **`NfcSettings`**            | <code>'nfc_settings'</code>            | Show NFC settings                                                                                      |
+| **`Print`**                  | <code>'print'</code>                   | Show the top level print settings                                                                      |
+| **`Privacy`**                | <code>'privacy'</code>                 | Show settings to allow configuration of privacy options                                                |
+| **`QuickLaunch`**            | <code>'quick_launch'</code>            | Show settings to allow configuration of quick launch shortcuts                                         |
+| **`Search`**                 | <code>'search'</code>                  | Show settings for global search                                                                        |
+| **`Security`**               | <code>'security'</code>                | Show settings to allow configuration of security and location privacy                                  |
+| **`Settings`**               | <code>'settings'</code>                | Show system settings                                                                                   |
+| **`ShowRegulatoryInfo`**     | <code>'show_regulatory_info'</code>    | Show the regulatory information screen for the device                                                  |
+| **`Sound`**                  | <code>'sound'</code>                   | Show settings to a llow configuration of sound and volume                                              |
+| **`Storage`**                | <code>'storage'</code>                 | Show settings for internal storage                                                                     |
+| **`Sync`**                   | <code>'sync'</code>                    | Show settings to allow configuration of sync settings                                                  |
+| **`Usage`**                  | <code>'usage'</code>                   | Show settings to control access to usage information                                                   |
+| **`UserDictionary`**         | <code>'user_dictionary'</code>         | Show settings to manage the user input dictionary                                                      |
+| **`VoiceInput`**             | <code>'voice_input'</code>             | Show settings to configure input methods, in particular allowing the user to enable input methods      |
+| **`Wifi`**                   | <code>'wifi'</code>                    | Show settings to allow configuration of Wi-Fi                                                          |
+| **`WifiIp`**                 | <code>'wifi_ip'</code>                 | Show settings to allow configuration of a static IP address for Wi-Fi                                  |
+| **`Wireless`**               | <code>'wireless'</code>                | Show settings to allow configuration of wireless controls such as Wi-Fi, Bluetooth and Mobile networks |
 
 
 #### IOSSettings
 
-| Members                  | Value                              |
-| ------------------------ | ---------------------------------- |
-| **`About`**              | <code>'about'</code>               |
-| **`Accessibility`**      | <code>'accessibility'</code>       |
-| **`Account`**            | <code>'account'</code>             |
-| **`AirplaneMode`**       | <code>'airplane_mode'</code>       |
-| **`ApplicationDetails`** | <code>'application_details'</code> |
-| **`AutoLock`**           | <code>'autolock'</code>            |
-| **`Battery`**            | <code>'battery'</code>             |
-| **`Bluetooth`**          | <code>'bluetooth'</code>           |
-| **`Browser`**            | <code>'browser'</code>             |
-| **`Castle`**             | <code>'castle'</code>              |
-| **`Cellularusage`**      | <code>'cellular_usage'</code>      |
-| **`ConfigurationList`**  | <code>'configuration_list'</code>  |
-| **`Date`**               | <code>'date'</code>                |
-| **`Display`**            | <code>'display'</code>             |
-| **`DoNotDisturb`**       | <code>'do_not_disturb'</code>      |
-| **`Facetime`**           | <code>'facetime'</code>            |
-| **`Keyboard`**           | <code>'keyboard'</code>            |
-| **`Keyboards`**          | <code>'keyboards'</code>           |
-| **`Locale`**             | <code>'locale'</code>              |
-| **`Location`**           | <code>'location'</code>            |
-| **`Locations`**          | <code>'locations'</code>           |
-| **`MobileData`**         | <code>'mobile_data'</code>         |
-| **`Music`**              | <code>'music'</code>               |
-| **`MusicEqualizer`**     | <code>'music_equalizer'</code>     |
-| **`MusicVolume`**        | <code>'music_volume'</code>        |
-| **`Network`**            | <code>'network'</code>             |
-| **`NikeIpod`**           | <code>'nike_ipod'</code>           |
-| **`Notes`**              | <code>'notes'</code>               |
-| **`NotificationId`**     | <code>'notification_id'</code>     |
-| **`Passbook`**           | <code>'passbook'</code>            |
-| **`Phone`**              | <code>'phone'</code>               |
-| **`Photos`**             | <code>'photos'</code>              |
-| **`Privacy`**            | <code>'privacy'</code>             |
-| **`Reset`**              | <code>'reset'</code>               |
-| **`Ringtone`**           | <code>'ringtone'</code>            |
-| **`Search`**             | <code>'search'</code>              |
-| **`Settings`**           | <code>'settings'</code>            |
-| **`Sound`**              | <code>'sound'</code>               |
-| **`SoftwareUpdate`**     | <code>'software_update'</code>     |
-| **`Storage`**            | <code>'storage'</code>             |
-| **`Store`**              | <code>'store'</code>               |
-| **`Tethering`**          | <code>'tethering'</code>           |
-| **`Touch`**              | <code>'touch'</code>               |
-| **`Twitter`**            | <code>'twitter'</code>             |
-| **`Usage`**              | <code>'usage'</code>               |
-| **`Video`**              | <code>'video'</code>               |
-| **`VPN`**                | <code>'vpn'</code>                 |
-| **`Wallpaper`**          | <code>'wallpaper'</code>           |
-| **`Wifi`**               | <code>'wifi'</code>                |
+| Members                  | Value                              | Description                                                                                       |
+| ------------------------ | ---------------------------------- | ------------------------------------------------------------------------------------------------- |
+| **`About`**              | <code>'about'</code>               | Settings &gt; General &gt; About                                                                  |
+| **`Accessibility`**      | <code>'accessibility'</code>       | Settings &gt; General &gt; Accessibility                                                          |
+| **`Account`**            | <code>'account'</code>             | Settings &gt; Your name                                                                           |
+| **`AirplaneMode`**       | <code>'airplane_mode'</code>       | Settings &gt; Airplane Mode                                                                       |
+| **`ApplicationDetails`** | <code>'application_details'</code> | Settings                                                                                          |
+| **`AutoLock`**           | <code>'autolock'</code>            | Settings &gt; General &gt; Auto-Lock (before iOS 10)                                              |
+| **`Battery`**            | <code>'battery'</code>             | Settings &gt; Battery                                                                             |
+| **`Bluetooth`**          | <code>'bluetooth'</code>           | Settings &gt; General &gt; Bluetooth (&lt; iOS 9) &lt;br&gt; Settings &gt; Bluetooth (&gt; iOS 9) |
+| **`Browser`**            | <code>'browser'</code>             | Settings &gt; Safari                                                                              |
+| **`Castle`**             | <code>'castle'</code>              | Settings &gt; iCloud                                                                              |
+| **`Cellularusage`**      | <code>'cellular_usage'</code>      | Settings &gt; General &gt; Cellular Usage                                                         |
+| **`ConfigurationList`**  | <code>'configuration_list'</code>  | Settings &gt; General &gt; Profile                                                                |
+| **`Date`**               | <code>'date'</code>                | Settings &gt; General &gt; Date & Time                                                            |
+| **`Display`**            | <code>'display'</code>             | Settings &gt; Display & Brightness                                                                |
+| **`DoNotDisturb`**       | <code>'do_not_disturb'</code>      | Settings &gt; Do Not Disturb                                                                      |
+| **`Facetime`**           | <code>'facetime'</code>            | Settings &gt; Facetime                                                                            |
+| **`Keyboard`**           | <code>'keyboard'</code>            | Settings &gt; General &gt; Keyboard                                                               |
+| **`Keyboards`**          | <code>'keyboards'</code>           | Settings &gt; General &gt; Keyboard &gt; Keyboards                                                |
+| **`Locale`**             | <code>'locale'</code>              | Settings &gt; General &gt; Language & Region                                                      |
+| **`Location`**           | <code>'location'</code>            | Settings &gt; Location Services (in older versions of iOS)                                        |
+| **`Locations`**          | <code>'locations'</code>           | Settings &gt; Privacy &gt; Location Services (in newer versions of iOS)                           |
+| **`MobileData`**         | <code>'mobile_data'</code>         | Settings &gt; Mobile Data (after iOS 10)                                                          |
+| **`Music`**              | <code>'music'</code>               | Settings &gt; iTunes                                                                              |
+| **`MusicEqualizer`**     | <code>'music_equalizer'</code>     | Settings &gt; Music &gt; EQ                                                                       |
+| **`MusicVolume`**        | <code>'music_volume'</code>        | Settings &gt; Music &gt; Volume Limit                                                             |
+| **`Network`**            | <code>'network'</code>             | Settings &gt; General &gt; Network                                                                |
+| **`NikeIpod`**           | <code>'nike_ipod'</code>           | Settings &gt; Nike + iPod                                                                         |
+| **`Notes`**              | <code>'notes'</code>               | Settings &gt; Notes                                                                               |
+| **`Passbook`**           | <code>'passbook'</code>            | Settings &gt; Passbook & Apple Pay                                                                |
+| **`Phone`**              | <code>'phone'</code>               | Settings &gt; Phone                                                                               |
+| **`Photos`**             | <code>'photos'</code>              | Settings &gt; Photo & Camera                                                                      |
+| **`Privacy`**            | <code>'privacy'</code>             | Settings &gt; Privacy                                                                             |
+| **`Reset`**              | <code>'reset'</code>               | Settings &gt; General &gt; Reset                                                                  |
+| **`Ringtone`**           | <code>'ringtone'</code>            | Settings &gt; Sounds &gt; Ringtone                                                                |
+| **`Search`**             | <code>'search'</code>              | Settings &gt; General &gt; Assistant (&lt; iOS 10) Settings &gt; Siri (&gt; iOS 10)               |
+| **`Settings`**           | <code>'settings'</code>            | Settings &gt; General                                                                             |
+| **`Sound`**              | <code>'sound'</code>               | Settings &gt; Sounds                                                                              |
+| **`SoftwareUpdate`**     | <code>'software_update'</code>     | Settings &gt; General &gt; Software Update                                                        |
+| **`Storage`**            | <code>'storage'</code>             | Settings &gt; iCloud &gt; Storage & Backup                                                        |
+| **`Store`**              | <code>'store'</code>               | Settings &gt; iTunes & App Store                                                                  |
+| **`Tethering`**          | <code>'tethering'</code>           | Settings &gt; Personal Hotspot                                                                    |
+| **`Touch`**              | <code>'touch'</code>               | Settings &gt; Touch ID & Passcode                                                                 |
+| **`Twitter`**            | <code>'twitter'</code>             | Settings &gt; Twitter                                                                             |
+| **`Usage`**              | <code>'usage'</code>               | Settings &gt; General &gt; Storage & iCloud Usage                                                 |
+| **`Video`**              | <code>'video'</code>               | Settings &gt; Video                                                                               |
+| **`VPN`**                | <code>'vpn'</code>                 | Settings &gt; General &gt; VPN                                                                    |
+| **`Wallpaper`**          | <code>'wallpaper'</code>           | Settings &gt; Wallpaper                                                                           |
+| **`Wifi`**               | <code>'wifi'</code>                | Settings &gt; WIFI                                                                                |
 
 </docgen-api>
