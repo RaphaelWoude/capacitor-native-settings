@@ -128,55 +128,9 @@ Opens the specified option in android.
 
 #### IOSSettings
 
-| Members                  | Value                              | Description                                                                                       |
-| ------------------------ | ---------------------------------- | ------------------------------------------------------------------------------------------------- |
-| **`About`**              | <code>'about'</code>               | Settings &gt; General &gt; About                                                                  |
-| **`Accessibility`**      | <code>'accessibility'</code>       | Settings &gt; General &gt; Accessibility                                                          |
-| **`Account`**            | <code>'account'</code>             | Settings &gt; Your name                                                                           |
-| **`AirplaneMode`**       | <code>'airplane_mode'</code>       | Settings &gt; Airplane Mode                                                                       |
-| **`ApplicationDetails`** | <code>'application_details'</code> | Settings                                                                                          |
-| **`AutoLock`**           | <code>'autolock'</code>            | Settings &gt; General &gt; Auto-Lock (before iOS 10)                                              |
-| **`Battery`**            | <code>'battery'</code>             | Settings &gt; Battery                                                                             |
-| **`Bluetooth`**          | <code>'bluetooth'</code>           | Settings &gt; General &gt; Bluetooth (&lt; iOS 9) &lt;br&gt; Settings &gt; Bluetooth (&gt; iOS 9) |
-| **`Browser`**            | <code>'browser'</code>             | Settings &gt; Safari                                                                              |
-| **`Castle`**             | <code>'castle'</code>              | Settings &gt; iCloud                                                                              |
-| **`Cellularusage`**      | <code>'cellular_usage'</code>      | Settings &gt; General &gt; Cellular Usage                                                         |
-| **`ConfigurationList`**  | <code>'configuration_list'</code>  | Settings &gt; General &gt; Profile                                                                |
-| **`Date`**               | <code>'date'</code>                | Settings &gt; General &gt; Date & Time                                                            |
-| **`Display`**            | <code>'display'</code>             | Settings &gt; Display & Brightness                                                                |
-| **`DoNotDisturb`**       | <code>'do_not_disturb'</code>      | Settings &gt; Do Not Disturb                                                                      |
-| **`Facetime`**           | <code>'facetime'</code>            | Settings &gt; Facetime                                                                            |
-| **`Keyboard`**           | <code>'keyboard'</code>            | Settings &gt; General &gt; Keyboard                                                               |
-| **`Keyboards`**          | <code>'keyboards'</code>           | Settings &gt; General &gt; Keyboard &gt; Keyboards                                                |
-| **`Locale`**             | <code>'locale'</code>              | Settings &gt; General &gt; Language & Region                                                      |
-| **`Location`**           | <code>'location'</code>            | Settings &gt; Location Services (in older versions of iOS)                                        |
-| **`Locations`**          | <code>'locations'</code>           | Settings &gt; Privacy &gt; Location Services (in newer versions of iOS)                           |
-| **`MobileData`**         | <code>'mobile_data'</code>         | Settings &gt; Mobile Data (after iOS 10)                                                          |
-| **`Music`**              | <code>'music'</code>               | Settings &gt; iTunes                                                                              |
-| **`MusicEqualizer`**     | <code>'music_equalizer'</code>     | Settings &gt; Music &gt; EQ                                                                       |
-| **`MusicVolume`**        | <code>'music_volume'</code>        | Settings &gt; Music &gt; Volume Limit                                                             |
-| **`Network`**            | <code>'network'</code>             | Settings &gt; General &gt; Network                                                                |
-| **`NikeIpod`**           | <code>'nike_ipod'</code>           | Settings &gt; Nike + iPod                                                                         |
-| **`Notes`**              | <code>'notes'</code>               | Settings &gt; Notes                                                                               |
-| **`Passbook`**           | <code>'passbook'</code>            | Settings &gt; Passbook & Apple Pay                                                                |
-| **`Phone`**              | <code>'phone'</code>               | Settings &gt; Phone                                                                               |
-| **`Photos`**             | <code>'photos'</code>              | Settings &gt; Photo & Camera                                                                      |
-| **`Privacy`**            | <code>'privacy'</code>             | Settings &gt; Privacy                                                                             |
-| **`Reset`**              | <code>'reset'</code>               | Settings &gt; General &gt; Reset                                                                  |
-| **`Ringtone`**           | <code>'ringtone'</code>            | Settings &gt; Sounds &gt; Ringtone                                                                |
-| **`Search`**             | <code>'search'</code>              | Settings &gt; General &gt; Assistant (&lt; iOS 10) Settings &gt; Siri (&gt; iOS 10)               |
-| **`Settings`**           | <code>'settings'</code>            | Settings &gt; General                                                                             |
-| **`Sound`**              | <code>'sound'</code>               | Settings &gt; Sounds                                                                              |
-| **`SoftwareUpdate`**     | <code>'software_update'</code>     | Settings &gt; General &gt; Software Update                                                        |
-| **`Storage`**            | <code>'storage'</code>             | Settings &gt; iCloud &gt; Storage & Backup                                                        |
-| **`Store`**              | <code>'store'</code>               | Settings &gt; iTunes & App Store                                                                  |
-| **`Tethering`**          | <code>'tethering'</code>           | Settings &gt; Personal Hotspot                                                                    |
-| **`Touch`**              | <code>'touch'</code>               | Settings &gt; Touch ID & Passcode                                                                 |
-| **`Twitter`**            | <code>'twitter'</code>             | Settings &gt; Twitter                                                                             |
-| **`Usage`**              | <code>'usage'</code>               | Settings &gt; General &gt; Storage & iCloud Usage                                                 |
-| **`Video`**              | <code>'video'</code>               | Settings &gt; Video                                                                               |
-| **`VPN`**                | <code>'vpn'</code>                 | Settings &gt; General &gt; VPN                                                                    |
-| **`Wallpaper`**          | <code>'wallpaper'</code>           | Settings &gt; Wallpaper                                                                           |
-| **`Wifi`**               | <code>'wifi'</code>                | Settings &gt; WIFI                                                                                |
+| Members       | Value                  | Description                              |
+| ------------- | ---------------------- | ---------------------------------------- |
+| **`General`** | <code>'general'</code> | Opens iOS' general settings screen.      |
+| **`App`**     | <code>'app'</code>     | Opens your app-specific settings screen. |
 
 </docgen-api>

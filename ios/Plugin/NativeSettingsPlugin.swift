@@ -7,12 +7,27 @@ import Capacitor
  */
 @objc(NativeSettingsPlugin)
 public class NativeSettingsPlugin: CAPPlugin {
-    private let implementation = NativeSettings()
+    @objc func openIOS(_ call: CAPPluginCall) {
+        let value = call.getString("option") ?? ""
+        var settingsUrl:URL!
+        
+        if (value == "general") {
+            settingsUrl = URL(string: "App-Prefs:root=General")
+        } else if (value == "app") {
+            settingsUrl = URL(string: UIApplication.openSettingsURLString)
+        } else {
+            call.reject("Requested setting \"" + value + "\" is not available on iOS.");
+            return
+        }
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.resolve([
-            "value": implementation.echo(value)
-        ])
+        if UIApplication.shared.canOpenURL(settingsUrl) {
+            UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                call.resolve([
+                    "status": success
+                ])
+            })
+        } else {
+            call.reject("Cannot open settings")
+        }
     }
 }
