@@ -241,12 +241,12 @@ export enum AndroidSettings {
 
 export enum IOSSettings {
   /**
-   * Opens iOS' general settings screen.
+   * Opens iOS general settings screen.
    */
   General = 'general',
 
   /**
    * Opens your app-specific settings screen.
    */
-  App = 'app'
+  App = 'app',
 }
