@@ -2,26 +2,26 @@ import { WebPlugin } from '@capacitor/core';
 
 import type { NativeSettingsPlugin } from './definitions';
 
-export class NativeSettingsWeb extends WebPlugin implements NativeSettingsPlugin {
-
+export class NativeSettingsWeb
+  extends WebPlugin
+  implements NativeSettingsPlugin {
   /**
-   * Open android settings. 
+   * Open android settings.
    * Not implemented for web!
    */
-  async openAndroid(): Promise<{ status: boolean }> { 
+  async openAndroid(): Promise<{ status: boolean }> {
     return new Promise<any>((_resolve, reject) => {
-      reject(new Error("Not implemented for web."));
+      reject(new Error('Not implemented for web.'));
     });
   }
 
   /**
-   * Open iOS settings. 
+   * Open iOS settings.
    * Not implemented for web!
    */
   async openIOS(): Promise<{ status: boolean }> {
     return new Promise<any>((_resolve, reject) => {
-      reject(new Error("Not implemented for web."));
+      reject(new Error('Not implemented for web.'));
     });
   }
-
 }
