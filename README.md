@@ -130,7 +130,7 @@ Opens the specified option in android.
 
 | Members       | Value                  | Description                              |
 | ------------- | ---------------------- | ---------------------------------------- |
-| **`General`** | <code>'general'</code> | Opens iOS' general settings screen.      |
+| **`General`** | <code>'general'</code> | Opens iOS general settings screen.       |
 | **`App`**     | <code>'app'</code>     | Opens your app-specific settings screen. |
 
 </docgen-api>
