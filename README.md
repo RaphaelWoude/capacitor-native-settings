@@ -1,6 +1,7 @@
 # capacitor-native-settings
 
-Capacitor plugin to open native settings screens for android and iOS
+Capacitor plugin to open native settings screens for android and iOS. \
+Android has a lot of settings screens that can be opened. On iOS this is very limited since iOS 10.
 
 ## Install
 
@@ -41,7 +42,6 @@ Opens the specified option in android.
 
 
 ### openIOS(...)
-
 ```typescript
 openIOS(option: IOSOptions) => any
 ```
