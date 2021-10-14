@@ -9,6 +9,20 @@ npm install capacitor-native-settings
 npx cap sync
 ```
 
+## Example
+
+```
+import { NativeSettings } from 'capacitor-native-settings';
+
+NativeSettings.openAndroid({
+  option: AndroidSettings.ApplicationDetails,
+});
+
+NativeSettings.openIOS({
+  option: IOSSettings.App,
+});
+```
+
 ## API
 
 <docgen-index>
