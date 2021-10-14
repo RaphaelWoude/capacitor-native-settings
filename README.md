@@ -11,7 +11,7 @@ npx cap sync
 
 ## Example
 
-```
+```JS
 import { NativeSettings } from 'capacitor-native-settings';
 
 NativeSettings.openAndroid({
