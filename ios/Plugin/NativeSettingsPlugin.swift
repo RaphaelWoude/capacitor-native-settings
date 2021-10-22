@@ -1,18 +1,43 @@
 import Foundation
 import Capacitor
 
-/**
- * Please read the Capacitor iOS Plugin Development Guide
- * here: https://capacitorjs.com/docs/plugins/ios
- */
 @objc(NativeSettingsPlugin)
 public class NativeSettingsPlugin: CAPPlugin {
     @objc func openIOS(_ call: CAPPluginCall) {
         let value = call.getString("option") ?? ""
         var settingsUrl:URL!
         
-        if (value == "general") {
-            settingsUrl = URL(string: "App-Prefs:root=General")
+        let settingsPaths = [
+            "about": "App-prefs:General&path=About",
+            "autoLock": "App-prefs:General&path=AUTOLOCK",
+            "bluetooth": "App-prefs:Bluetooth",
+            "dateTime": "App-prefs:General&path=DATE_AND_TIME",
+            "facetime": "App-prefs:FACETIME",
+            "general": "App-prefs:General",
+            "keyboard": "App-prefs:General&path=Keyboard",
+            "iCloud": "App-prefs:CASTLE",
+            "iCloudStorageBackup": "App-prefs:CASTLE&path=STORAGE_AND_BACKUP",
+            "international": "App-prefs:General&path=INTERNATIONAL",
+            "music": "App-prefs:MUSIC",
+            "notes": "App-prefs:NOTES",
+            "notifications": "App-prefs:NOTIFICATIONS_ID",
+            "phone": "App-prefs:Phone",
+            "photos": "App-prefs:Photos",
+            "managedConfigurationList": "App-prefs:General&path=ManagedConfigurationList",
+            "reset": "App-prefs:General&path=Reset",
+            "ringtone": "App-prefs:Sounds&path=Ringtone",
+            "sounds": "App-prefs:Sounds",
+            "softwareUpdate": "App-prefs:General&path=SOFTWARE_UPDATE_LINK",
+            "store": "App-prefs:STORE",
+            "wallpaper": "App-prefs:Wallpaper",
+            "wifi": "App-prefs:WIFI",
+            "tethering": "App-prefs:INTERNET_TETHERING",
+            "doNotDisturb": "App-prefs:DO_NOT_DISTURB"
+        ]
+        
+        if (settingsPaths[value] != nil)
+        {
+            settingsUrl = URL(string: settingsPaths[value]!)
         } else if (value == "app") {
             settingsUrl = URL(string: UIApplication.openSettingsURLString)
         } else {
@@ -20,14 +45,16 @@ public class NativeSettingsPlugin: CAPPlugin {
             return
         }
 
-        if UIApplication.shared.canOpenURL(settingsUrl) {
-            UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
-                call.resolve([
-                    "status": success
-                ])
-            })
-        } else {
-            call.reject("Cannot open settings")
+        DispatchQueue.main.async {
+            if UIApplication.shared.canOpenURL(settingsUrl) {
+                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                    call.resolve([
+                        "status": success
+                    ])
+                })
+            } else {
+                call.reject("Cannot open settings")
+            }
         }
     }
 }

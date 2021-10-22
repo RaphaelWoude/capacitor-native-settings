@@ -7,7 +7,10 @@ export interface NativeSettingsPlugin {
   openAndroid(option: AndroidOptions): Promise<{ status: boolean }>;
 
   /**
-   * Opens the specified option in android.
+   * Opens the specified option on iOS.
+   * Note that the only supported option by Apple is "App". Using other options
+   * might break in future iOS versions or have your app rejected in the App Store.
+   * 
    * @param option IOSOptions
    * @see IOSOptions
    */
@@ -241,12 +244,132 @@ export enum AndroidSettings {
 
 export enum IOSSettings {
   /**
+   * Settings > About page
+   */
+  About = 'about',
+
+  /**
+   * Opens your app-specific settings screen. Note that this is the only officially supported settings screen by Apple.
+   */
+  App = 'app',
+
+  /**
+   * Used to set if and when the screen should be automatically locked.
+   */
+  AutoLock = 'autoLock',
+
+  /**
+   * Bluetooth settings. Allows the users to enable/disable bluetooth and to search for devices.
+   */
+  Bluetooth = 'bluetooth',
+
+  /**
+   * Date and time settings.
+   */
+  DateTime = 'dateTime',
+
+  /**
+   * FaceTime settings.
+   */
+  FaceTime = 'facetime',
+
+  /**
    * Opens iOS general settings screen.
    */
   General = 'general',
 
   /**
-   * Opens your app-specific settings screen.
+   * Keyboard settings.
    */
-  App = 'app',
+  Keyboard = 'keyboard',
+
+  /**
+   * iCloud settings.
+   */
+  ICloud = 'iCloud',
+
+  /**
+   * iCloud Storage and Backup settings.
+   */
+  ICloudStorageBackup = 'iCloudStorageBackup',
+
+  /**
+   * Language and region settings.
+   */
+  International = 'international',
+
+  /**
+   * Music settings.
+   */
+  Music = 'music',
+
+  /**
+   * Notes settings.
+   */
+  Notes = 'notes',
+
+  /**
+   * Notifications settings.
+   */
+  Notifications = 'notifications',
+
+  /**
+   * Phone settings.
+   */
+  Phone = 'phone',
+
+  /**
+   * Photos settings.
+   */
+  Photos = 'photos',
+
+  /**
+   * Allows the user to manage configuration profiles that are installed on the phone.
+   */
+  ManagedConfigurationList = 'managedConfigurationList',
+
+  /**
+   * Screen where the user can reset the phone to factory settings.
+   */
+  Reset = 'reset',
+
+  /**
+   * Ringtone settings.
+   */
+  Ringtone = 'ringtone',
+
+  /**
+   * Used to set phone volume, vibration settings, etc.
+   */
+  Sounds = 'sounds',
+
+  /**
+   * Software update screen.
+   */
+  SoftwareUpdate = 'softwareUpdate',
+
+  /**
+   * Store settings.
+   */
+  Store = 'store',
+
+  /**
+   * Wallpaper settings.
+   */
+  Wallpaper = 'wallpaper',
+
+  /**
+   * WiFi settings.
+   */
+  WiFi = 'wifi',
+
+  /**
+   * Tethering settings (used to create a hotspot with mobile data).
+   */
+  Tethering = 'tethering',
+
+  /**
+   * Do Not Disturb settings.
+   */
+  DoNotDisturb = 'doNotDisturb'
 }
