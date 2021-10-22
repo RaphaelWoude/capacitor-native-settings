@@ -5,8 +5,8 @@ import Capacitor
 public class NativeSettingsPlugin: CAPPlugin {
     @objc func openIOS(_ call: CAPPluginCall) {
         let value = call.getString("option") ?? ""
-        var settingsUrl:URL!
-        
+        var settingsUrl: URL!
+
         let settingsPaths = [
             "about": "App-prefs:General&path=About",
             "autoLock": "App-prefs:General&path=AUTOLOCK",
@@ -34,14 +34,13 @@ public class NativeSettingsPlugin: CAPPlugin {
             "tethering": "App-prefs:INTERNET_TETHERING",
             "doNotDisturb": "App-prefs:DO_NOT_DISTURB"
         ]
-        
-        if (settingsPaths[value] != nil)
-        {
+
+        if settingsPaths[value] != nil {
             settingsUrl = URL(string: settingsPaths[value]!)
-        } else if (value == "app") {
+        } else if value == "app" {
             settingsUrl = URL(string: UIApplication.openSettingsURLString)
         } else {
-            call.reject("Requested setting \"" + value + "\" is not available on iOS.");
+            call.reject("Requested setting \"" + value + "\" is not available on iOS.")
             return
         }
 
