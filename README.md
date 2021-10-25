@@ -1,6 +1,6 @@
 # capacitor-native-settings
 
-Capacitor plugin to open native settings screens for android and iOS.
+Capacitor plugin to open native settings screens for Android and iOS.
 
 ## Install
 
@@ -18,6 +18,11 @@ NativeSettings.openAndroid({
   option: AndroidSettings.ApplicationDetails,
 });
 
+/**
+ * Note that the only supported option by Apple is "App".
+ * Using other options might break in future iOS versions
+ * or have your app rejected from the App Store.
+ */
 NativeSettings.openIOS({
   option: IOSSettings.App,
 });
@@ -55,11 +60,14 @@ Opens the specified option in android.
 
 
 ### openIOS(...)
+
 ```typescript
 openIOS(option: IOSOptions) => any
 ```
 
-Opens the specified option in android.
+Opens the specified option on iOS.
+Note that the only supported option by Apple is "App". Using other options
+might break in future iOS versions or have your app rejected in the App Store.
 
 | Param        | Type                                              | Description                          |
 | ------------ | ------------------------------------------------- | ------------------------------------ |
@@ -141,9 +149,33 @@ Opens the specified option in android.
 
 #### IOSSettings
 
-| Members       | Value                  | Description                              |
-| ------------- | ---------------------- | ---------------------------------------- |
-| **`General`** | <code>'general'</code> | Opens iOS general settings screen.       |
-| **`App`**     | <code>'app'</code>     | Opens your app-specific settings screen. |
+| Members                        | Value                                   | Description                                                                                                        |
+| ------------------------------ | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| **`About`**                    | <code>'about'</code>                    | Settings &gt; About page                                                                                           |
+| **`App`**                      | <code>'app'</code>                      | Opens your app-specific settings screen. Note that this is the only officially supported settings screen by Apple. |
+| **`AutoLock`**                 | <code>'autoLock'</code>                 | Used to set if and when the screen should be automatically locked.                                                 |
+| **`Bluetooth`**                | <code>'bluetooth'</code>                | Bluetooth settings. Allows the users to enable/disable bluetooth and to search for devices.                        |
+| **`DateTime`**                 | <code>'dateTime'</code>                 | Date and time settings.                                                                                            |
+| **`FaceTime`**                 | <code>'facetime'</code>                 | FaceTime settings.                                                                                                 |
+| **`General`**                  | <code>'general'</code>                  | Opens iOS general settings screen.                                                                                 |
+| **`Keyboard`**                 | <code>'keyboard'</code>                 | Keyboard settings.                                                                                                 |
+| **`ICloud`**                   | <code>'iCloud'</code>                   | iCloud settings.                                                                                                   |
+| **`ICloudStorageBackup`**      | <code>'iCloudStorageBackup'</code>      | iCloud Storage and Backup settings.                                                                                |
+| **`International`**            | <code>'international'</code>            | Language and region settings.                                                                                      |
+| **`Music`**                    | <code>'music'</code>                    | Music settings.                                                                                                    |
+| **`Notes`**                    | <code>'notes'</code>                    | Notes settings.                                                                                                    |
+| **`Notifications`**            | <code>'notifications'</code>            | Notifications settings.                                                                                            |
+| **`Phone`**                    | <code>'phone'</code>                    | Phone settings.                                                                                                    |
+| **`Photos`**                   | <code>'photos'</code>                   | Photos settings.                                                                                                   |
+| **`ManagedConfigurationList`** | <code>'managedConfigurationList'</code> | Allows the user to manage configuration profiles that are installed on the phone.                                  |
+| **`Reset`**                    | <code>'reset'</code>                    | Screen where the user can reset the phone to factory settings.                                                     |
+| **`Ringtone`**                 | <code>'ringtone'</code>                 | Ringtone settings.                                                                                                 |
+| **`Sounds`**                   | <code>'sounds'</code>                   | Used to set phone volume, vibration settings, etc.                                                                 |
+| **`SoftwareUpdate`**           | <code>'softwareUpdate'</code>           | Software update screen.                                                                                            |
+| **`Store`**                    | <code>'store'</code>                    | Store settings.                                                                                                    |
+| **`Wallpaper`**                | <code>'wallpaper'</code>                | Wallpaper settings.                                                                                                |
+| **`WiFi`**                     | <code>'wifi'</code>                     | WiFi settings.                                                                                                     |
+| **`Tethering`**                | <code>'tethering'</code>                | Tethering settings (used to create a hotspot with mobile data).                                                    |
+| **`DoNotDisturb`**             | <code>'doNotDisturb'</code>             | Do Not Disturb settings.                                                                                           |
 
 </docgen-api>
