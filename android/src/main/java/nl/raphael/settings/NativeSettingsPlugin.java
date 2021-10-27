@@ -14,6 +14,11 @@ import com.getcapacitor.annotation.CapacitorPlugin;
 public class NativeSettingsPlugin extends Plugin {
 
     @PluginMethod
+    public void open(PluginCall call) {
+        this.openAndroid(call);
+    }
+
+    @PluginMethod
     public void openAndroid(PluginCall call) {
         String option = call.getString("option");
         String setting = AndroidSettings.getAction(option);
