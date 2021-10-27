@@ -14,6 +14,11 @@ npx cap sync
 ```JS
 import { NativeSettings } from 'capacitor-native-settings';
 
+NativeSettings.open({
+  optionAndroid: AndroidSettings.ApplicationDetails, 
+  optionIOS: IOSSettings.App
+})
+
 NativeSettings.openAndroid({
   option: AndroidSettings.ApplicationDetails,
 });
@@ -32,6 +37,7 @@ NativeSettings.openIOS({
 
 <docgen-index>
 
+* [`open(...)`](#open)
 * [`openAndroid(...)`](#openandroid)
 * [`openIOS(...)`](#openios)
 * [Interfaces](#interfaces)
@@ -42,6 +48,26 @@ NativeSettings.openIOS({
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
+### open(...)
+
+```typescript
+open(optionAndroid: AndroidOptions, optionIOS: IOSOptions) => any
+```
+
+Opens the specified options on android & ios.
+Note that the only supported option by Apple is "App". Using other options
+might break in future iOS versions or have your app rejected in the App Store.
+
+| Param               | Type                                                      | Description                                  |
+| ------------------- | --------------------------------------------------------- | -------------------------------------------- |
+| **`optionAndroid`** | <code><a href="#androidoptions">AndroidOptions</a></code> | <a href="#androidoptions">AndroidOptions</a> |
+| **`optionIOS`**     | <code><a href="#iosoptions">IOSOptions</a></code>         | <a href="#iosoptions">IOSOptions</a>         |
+
+**Returns:** <code>any</code>
+
+--------------------
+
+
 ### openAndroid(...)
 
 ```typescript
@@ -49,6 +75,8 @@ openAndroid(option: AndroidOptions) => any
 ```
 
 Opens the specified option in android.
+Only use this if you have made sure the user is on android. 
+This can be done by checking the platform before hand.
 
 | Param        | Type                                                      | Description                                  |
 | ------------ | --------------------------------------------------------- | -------------------------------------------- |
@@ -66,6 +94,9 @@ openIOS(option: IOSOptions) => any
 ```
 
 Opens the specified option on iOS.
+Only use this if you have made sure the user is on iOS. 
+This can be done by checking the platform before hand.
+
 Note that the only supported option by Apple is "App". Using other options
 might break in future iOS versions or have your app rejected in the App Store.
 
