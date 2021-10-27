@@ -66,8 +66,6 @@ openIOS(option: IOSOptions) => any
 ```
 
 Opens the specified option on iOS.
-Note that the only supported option by Apple is "App". Using other options
-might break in future iOS versions or have your app rejected in the App Store.
 
 | Param        | Type                                              | Description                          |
 | ------------ | ------------------------------------------------- | ------------------------------------ |
