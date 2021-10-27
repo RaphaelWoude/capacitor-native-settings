@@ -6,6 +6,16 @@ export class NativeSettingsWeb
   extends WebPlugin
   implements NativeSettingsPlugin {
   /**
+   * Open iOS & Android settings.
+   * Not implemented for web!
+   */
+   async open(): Promise<{ status: boolean }> {
+    return new Promise<any>((_resolve, reject) => {
+      reject(new Error('Not implemented for web.'));
+    });
+  }
+
+  /**
    * Open android settings.
    * Not implemented for web!
    */
