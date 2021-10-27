@@ -4,15 +4,10 @@ export interface NativeSettingsPlugin {
    * Note that the only supported option by Apple is "App". Using other options
    * might break in future iOS versions or have your app rejected in the App Store.
    *
-   * @param optionAndroid AndroidOptions
-   * @see AndroidOptions
-   * @param optionIOS IOSOptions
-   * @see IOSOptions
+   * @param option PlatformOptions
+   * @see PlatformOptions
    */
-  open(
-    optionAndroid: AndroidOptions,
-    optionIOS: IOSOptions,
-  ): Promise<{ status: boolean }>;
+  open(option: PlatformOptions): Promise<{ status: boolean }>;
 
   /**
    * Opens the specified option in android.
@@ -36,6 +31,11 @@ export interface NativeSettingsPlugin {
    * @see IOSOptions
    */
   openIOS(option: IOSOptions): Promise<{ status: boolean }>;
+}
+
+export interface PlatformOptions {
+  optionAndroid: AndroidSettings;
+  optionIOS: IOSSettings;
 }
 
 export interface AndroidOptions {

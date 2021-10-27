@@ -15,7 +15,16 @@ public class NativeSettingsPlugin extends Plugin {
 
     @PluginMethod
     public void open(PluginCall call) {
-        this.openAndroid(call);
+        String option = call.getString("optionAndroid");
+        String setting = AndroidSettings.getAction(option);
+
+        // Check if settings is available.
+        if (setting == null) {
+            call.reject("Could not find native android setting: " + option);
+            return;
+        }
+
+        this.openOption(call, setting);
     }
 
     @PluginMethod
@@ -29,6 +38,10 @@ public class NativeSettingsPlugin extends Plugin {
             return;
         }
 
+        this.openOption(call, setting);
+    }
+
+    private void openOption(PluginCall call, String setting) {
         Intent intent = new Intent();
 
         // Application details requires package name as URI.
