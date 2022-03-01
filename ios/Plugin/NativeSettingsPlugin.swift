@@ -18,6 +18,7 @@ public class NativeSettingsPlugin: CAPPlugin {
             "iCloud": "App-prefs:CASTLE",
             "iCloudStorageBackup": "App-prefs:CASTLE&path=STORAGE_AND_BACKUP",
             "international": "App-prefs:General&path=INTERNATIONAL",
+            "locationServices": "App-prefs:Privacy&path=LOCATION",
             "music": "App-prefs:MUSIC",
             "notes": "App-prefs:NOTES",
             "notifications": "App-prefs:NOTIFICATIONS_ID",

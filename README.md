@@ -162,6 +162,7 @@ might break in future iOS versions or have your app rejected in the App Store.
 | **`ICloud`**                   | <code>'iCloud'</code>                   | iCloud settings.                                                                                                   |
 | **`ICloudStorageBackup`**      | <code>'iCloudStorageBackup'</code>      | iCloud Storage and Backup settings.                                                                                |
 | **`International`**            | <code>'international'</code>            | Language and region settings.                                                                                      |
+| **`LocationServices`**         | <code>'locationServices'</code>         | Show settings to allow configuration of current location sources                                       |
 | **`Music`**                    | <code>'music'</code>                    | Music settings.                                                                                                    |
 | **`Notes`**                    | <code>'notes'</code>                    | Notes settings.                                                                                                    |
 | **`Notifications`**            | <code>'notifications'</code>            | Notifications settings.                                                                                            |

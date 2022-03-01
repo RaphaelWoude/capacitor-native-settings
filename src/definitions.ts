@@ -299,6 +299,11 @@ export enum IOSSettings {
   International = 'international',
 
   /**
+   * Show settings to allow configuration of current location sources
+   */
+  LocationServices = 'locationServices',
+
+  /**
    * Music settings.
    */
   Music = 'music',
