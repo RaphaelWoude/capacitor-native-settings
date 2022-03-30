@@ -5,4 +5,5 @@
 // each method the plugin supports using the CAP_PLUGIN_METHOD macro.
 CAP_PLUGIN(NativeSettingsPlugin, "NativeSettings",
            CAP_PLUGIN_METHOD(openIOS, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(open, CAPPluginReturnPromise);
 )
