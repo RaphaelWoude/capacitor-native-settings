@@ -7,6 +7,7 @@ import static android.provider.Settings.ACTION_APN_SETTINGS;
 import static android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS;
 import static android.provider.Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS;
 import static android.provider.Settings.ACTION_APPLICATION_SETTINGS;
+import static android.provider.Settings.ACTION_APP_NOTIFICATION_SETTINGS;
 import static android.provider.Settings.ACTION_BLUETOOTH_SETTINGS;
 import static android.provider.Settings.ACTION_CAPTIONING_SETTINGS;
 import static android.provider.Settings.ACTION_CAST_SETTINGS;
@@ -52,6 +53,7 @@ public enum AndroidSettings {
     ApplicationDetails("application_details", ACTION_APPLICATION_DETAILS_SETTINGS),
     ApplicationDevelopment("application_development", ACTION_APPLICATION_DEVELOPMENT_SETTINGS),
     Application("application", ACTION_APPLICATION_SETTINGS),
+    AppNotification("app_notification", ACTION_APP_NOTIFICATION_SETTINGS),
     BatteryOptimization("battery_optimization", ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS),
     Bluetooth("bluetooth", ACTION_BLUETOOTH_SETTINGS),
     Captioning("captioning", ACTION_CAPTIONING_SETTINGS),
