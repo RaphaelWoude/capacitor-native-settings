@@ -152,6 +152,7 @@ might break in future iOS versions or have your app rejected in the App Store.
 | **`ApplicationDetails`**     | <code>'application_details'</code>     | Show screen of details about a particular application                                                  |
 | **`ApplicationDevelopment`** | <code>'application_development'</code> | Show settings to allow configuration of application development-related settings                       |
 | **`Application`**            | <code>'application'</code>             | Show settings to allow configuration of application-related settings                                   |
+| **`AppNotification`**        | <code>'app_notification'</code>        | Show settings to allow configuration of application-specific notifications                             |
 | **`BatteryOptimization`**    | <code>'battery_optimization'</code>    | Show screen for controlling which apps can ignore battery optimizations                                |
 | **`Bluetooth`**              | <code>'bluetooth'</code>               | Show settings to allow configuration of Bluetooth                                                      |
 | **`Captioning`**             | <code>'captioning'</code>              | Show settings for video captioning                                                                     |
