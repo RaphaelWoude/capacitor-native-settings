@@ -83,6 +83,11 @@ export enum AndroidSettings {
   Application = 'application',
 
   /**
+   * Show settings to allow configuration of application-specific notifications
+   */
+  AppNotification = 'app_notification',
+
+  /**
    * Show screen for controlling which apps can ignore battery optimizations
    */
   BatteryOptimization = 'battery_optimization',
