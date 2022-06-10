@@ -2,6 +2,7 @@ package nl.raphael.settings;
 
 import static android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS;
 import static android.provider.Settings.ACTION_APP_NOTIFICATION_SETTINGS;
+import static android.provider.Settings.EXTRA_APP_PACKAGE;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -51,7 +52,7 @@ public class NativeSettingsPlugin extends Plugin {
             intent.setData(Uri.parse("package:" + getActivity().getPackageName()));
         } else if (ACTION_APP_NOTIFICATION_SETTINGS.equals(setting)) { // App notification settings requires package name as extra app package.
             intent.setAction(setting);
-            intent.putExtra(Settings.EXTRA_APP_PACKAGE, getActivity().getPackageName());
+            intent.putExtra(EXTRA_APP_PACKAGE, getActivity().getPackageName());
         } else {
             intent.setAction(setting);
         }
