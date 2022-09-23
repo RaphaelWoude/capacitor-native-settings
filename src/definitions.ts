@@ -383,6 +383,11 @@ export enum IOSSettings {
    * Store settings.
    */
   Store = 'store',
+  
+  /**
+   * Tracking settings.
+   */
+  Tracking = 'tracking',
 
   /**
    * Wallpaper settings.
