@@ -26,6 +26,7 @@ public class NativeSettingsPlugin: CAPPlugin {
         "sounds": "App-prefs:Sounds",
         "softwareUpdate": "App-prefs:General&path=SOFTWARE_UPDATE_LINK",
         "store": "App-prefs:STORE",
+        "tracking": "App-prefs:Privacy&path=USER_TRACKING",
         "wallpaper": "App-prefs:Wallpaper",
         "wifi": "App-prefs:WIFI",
         "tethering": "App-prefs:INTERNET_TETHERING",

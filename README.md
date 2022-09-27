@@ -218,6 +218,7 @@ might break in future iOS versions or have your app rejected in the App Store.
 | **`Sounds`**                   | <code>'sounds'</code>                   | Used to set phone volume, vibration settings, etc.                                                                 |
 | **`SoftwareUpdate`**           | <code>'softwareUpdate'</code>           | Software update screen.                                                                                            |
 | **`Store`**                    | <code>'store'</code>                    | Store settings.                                                                                                    |
+| **`Tracking`**                 | <code>'tracking'</code>                 | Tracking settings.                                                                                                 |
 | **`Wallpaper`**                | <code>'wallpaper'</code>                | Wallpaper settings.                                                                                                |
 | **`WiFi`**                     | <code>'wifi'</code>                     | WiFi settings.                                                                                                     |
 | **`Tethering`**                | <code>'tethering'</code>                | Tethering settings (used to create a hotspot with mobile data).                                                    |

@@ -133,7 +133,7 @@ export enum AndroidSettings {
   Home = 'home',
 
   /**
-   * 	Show settings to configure input methods, in particular allowing the user to enable input methods
+   *    Show settings to configure input methods, in particular allowing the user to enable input methods
    */
   Keyboard = 'keyboard',
 
@@ -153,7 +153,7 @@ export enum AndroidSettings {
   Location = 'location',
 
   /**
-   * 	Show settings to manage installed applications
+   *    Show settings to manage installed applications
    */
   ManageApplications = 'manage_applications',
 
@@ -383,6 +383,11 @@ export enum IOSSettings {
    * Store settings.
    */
   Store = 'store',
+
+  /**
+   * Tracking settings.
+   */
+  Tracking = 'tracking',
 
   /**
    * Wallpaper settings.
