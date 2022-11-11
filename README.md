@@ -15,7 +15,7 @@ npx cap sync
 ## Example
 
 ```JS
-import { NativeSettings } from 'capacitor-native-settings';
+import { NativeSettings, AndroidSettings, IOSSettings } from 'capacitor-native-settings';
 
 /**
  * Note that the only supported option by Apple is "App".
