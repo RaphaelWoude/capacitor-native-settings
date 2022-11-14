@@ -59,7 +59,7 @@ NativeSettings.openIOS({
 ### open(...)
 
 ```typescript
-open(option: PlatformOptions) => any
+open(option: PlatformOptions) => Promise<{ status: boolean; }>
 ```
 
 Opens the specified options on android & ios.
@@ -70,7 +70,7 @@ might break in future iOS versions or have your app rejected in the App Store.
 | ------------ | ----------------------------------------------------------- | ---------------------------------------------- |
 | **`option`** | <code><a href="#platformoptions">PlatformOptions</a></code> | <a href="#platformoptions">PlatformOptions</a> |
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;{ status: boolean; }&gt;</code>
 
 --------------------
 
@@ -78,7 +78,7 @@ might break in future iOS versions or have your app rejected in the App Store.
 ### openAndroid(...)
 
 ```typescript
-openAndroid(option: AndroidOptions) => any
+openAndroid(option: AndroidOptions) => Promise<{ status: boolean; }>
 ```
 
 Opens the specified option in android.
@@ -89,7 +89,7 @@ This can be done by checking the platform before hand.
 | ------------ | --------------------------------------------------------- | -------------------------------------------- |
 | **`option`** | <code><a href="#androidoptions">AndroidOptions</a></code> | <a href="#androidoptions">AndroidOptions</a> |
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;{ status: boolean; }&gt;</code>
 
 --------------------
 
@@ -97,7 +97,7 @@ This can be done by checking the platform before hand.
 ### openIOS(...)
 
 ```typescript
-openIOS(option: IOSOptions) => any
+openIOS(option: IOSOptions) => Promise<{ status: boolean; }>
 ```
 
 Opens the specified option on iOS.
@@ -111,7 +111,7 @@ might break in future iOS versions or have your app rejected in the App Store.
 | ------------ | ------------------------------------------------- | ------------------------------------ |
 | **`option`** | <code><a href="#iosoptions">IOSOptions</a></code> | <a href="#iosoptions">IOSOptions</a> |
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;{ status: boolean; }&gt;</code>
 
 --------------------
 
