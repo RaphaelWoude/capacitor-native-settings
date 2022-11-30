@@ -1,9 +1,13 @@
-# capacitor-native-settings
+# Capacitor Native Settings
 
 Capacitor plugin to open native settings screens for Android and iOS.
 
-<b>Capacitor 4</b>: Use <b>v4.0.0</b> or higher. <br/>
-<b>Capacitor 3</b>: Use <b>v0.2.1</b> or lower.
+## Plugin versions
+
+| Capacitor version | Plugin version                                    |
+| ---------- | ----------------------------------------- |
+| v4 | >= v4.0.0 |
+| v3 | <= v2.0.1 |
 
 ## Install
 
