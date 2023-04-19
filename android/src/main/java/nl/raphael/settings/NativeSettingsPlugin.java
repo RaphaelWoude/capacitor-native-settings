@@ -6,10 +6,12 @@ import static android.provider.Settings.EXTRA_APP_PACKAGE;
 
 import android.content.Intent;
 import android.net.Uri;
+import androidx.activity.result.ActivityResult;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
+import com.getcapacitor.annotation.ActivityCallback;
 import com.getcapacitor.annotation.CapacitorPlugin;
 
 @CapacitorPlugin(name = "NativeSettings")
@@ -57,12 +59,15 @@ public class NativeSettingsPlugin extends Plugin {
             intent.setAction(setting);
         }
 
-        // Start intent in activity.
-        getActivity().startActivity(intent);
+        startActivityForResult(call, intent, "activityResult");
 
-        // Send response.
+    }
+
+    @ActivityCallback
+    private void activityResult(PluginCall call, ActivityResult result) {
         JSObject js = new JSObject();
         js.put("status", true);
         call.resolve(js);
     }
+
 }
