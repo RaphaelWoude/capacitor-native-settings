@@ -62,6 +62,9 @@ public class NativeSettingsPlugin extends Plugin {
         startActivityForResult(call, intent, "activityResult");
     }
 
+    /**
+     * Send response on activityResult (when intent closes)
+     */
     @ActivityCallback
     private void activityResult(PluginCall call, ActivityResult result) {
         JSObject js = new JSObject();
