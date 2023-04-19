@@ -60,7 +60,6 @@ public class NativeSettingsPlugin extends Plugin {
         }
 
         startActivityForResult(call, intent, "activityResult");
-
     }
 
     @ActivityCallback
@@ -69,5 +68,4 @@ public class NativeSettingsPlugin extends Plugin {
         js.put("status", true);
         call.resolve(js);
     }
-
 }
