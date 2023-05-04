@@ -6,6 +6,7 @@ Capacitor plugin to open native settings screens for Android and iOS.
 
 | Capacitor version | Plugin version                                    |
 | ---------- | ----------------------------------------- |
+| v5 | >= v5.0.0 |
 | v4 | >= v4.0.0 |
 | v3 | <= v2.0.1 |
 
