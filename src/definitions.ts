@@ -408,4 +408,9 @@ export enum IOSSettings {
    * Do Not Disturb settings.
    */
   DoNotDisturb = 'doNotDisturb',
+
+  /**
+   * Touch id passcode settings.
+   */
+  TouchIdPasscode = 'touchIdPasscode',
 }

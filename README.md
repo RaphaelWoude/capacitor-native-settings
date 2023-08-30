@@ -231,5 +231,6 @@ might break in future iOS versions or have your app rejected in the App Store.
 | **`WiFi`**                     | <code>'wifi'</code>                     | WiFi settings.                                                                                                     |
 | **`Tethering`**                | <code>'tethering'</code>                | Tethering settings (used to create a hotspot with mobile data).                                                    |
 | **`DoNotDisturb`**             | <code>'doNotDisturb'</code>             | Do Not Disturb settings.                                                                                           |
+| **`TouchIdPasscode`**          | <code>'touchIdPasscode'</code>          | Touch id passcode settings.                                                                                        |
 
 </docgen-api>
