@@ -412,5 +412,5 @@ export enum IOSSettings {
   /**
    * Touch id passcode settings.
    */
-  TouchIdPasscode = 'touchIdPasscode'
+  TouchIdPasscode = 'touchIdPasscode',
 }
