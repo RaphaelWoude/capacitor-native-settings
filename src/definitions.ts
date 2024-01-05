@@ -413,4 +413,9 @@ export enum IOSSettings {
    * Touch id passcode settings.
    */
   TouchIdPasscode = 'touchIdPasscode',
+
+  /**
+   * Screen Time settings.
+   */
+  ScreenTime = 'screenTime',
 }
