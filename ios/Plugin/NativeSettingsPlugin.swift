@@ -31,7 +31,8 @@ public class NativeSettingsPlugin: CAPPlugin {
         "wifi": "App-prefs:WIFI",
         "tethering": "App-prefs:INTERNET_TETHERING",
         "doNotDisturb": "App-prefs:DO_NOT_DISTURB",
-        "touchIdPasscode": "App-prefs:TOUCHID_PASSCODE"
+        "touchIdPasscode": "App-prefs:TOUCHID_PASSCODE",
+        "screenTime": "App-prefs:SCREEN_TIME"
     ]
 
     @objc func open(_ call: CAPPluginCall) {
