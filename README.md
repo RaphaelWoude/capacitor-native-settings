@@ -6,6 +6,7 @@ Capacitor plugin to open native settings screens for Android and iOS.
 
 | Capacitor version | Plugin version                                    |
 | ---------- | ----------------------------------------- |
+| v6 | >= v6.0.0 |
 | v5 | >= v5.0.0 |
 | v4 | >= v4.0.0 |
 | v3 | <= v2.0.1 |
@@ -232,6 +233,6 @@ might break in future iOS versions or have your app rejected in the App Store.
 | **`Tethering`**                | <code>'tethering'</code>                | Tethering settings (used to create a hotspot with mobile data).                                                    |
 | **`DoNotDisturb`**             | <code>'doNotDisturb'</code>             | Do Not Disturb settings.                                                                                           |
 | **`TouchIdPasscode`**          | <code>'touchIdPasscode'</code>          | Touch id passcode settings.                                                                                        |
-| **`ScreenTime`**          | <code>'screenTime'</code>          | Scree Time settings.                                                                                        |
+| **`ScreenTime`**               | <code>'screenTime'</code>               | Screen Time settings.                                                                                              |
 
 </docgen-api>
