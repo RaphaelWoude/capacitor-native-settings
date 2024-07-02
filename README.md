@@ -234,5 +234,6 @@ might break in future iOS versions or have your app rejected in the App Store.
 | **`DoNotDisturb`**             | <code>'doNotDisturb'</code>             | Do Not Disturb settings.                                                                                           |
 | **`TouchIdPasscode`**          | <code>'touchIdPasscode'</code>          | Touch id passcode settings.                                                                                        |
 | **`ScreenTime`**               | <code>'screenTime'</code>               | Screen Time settings.                                                                                              |
+| **`Accessibility`**            | <code>'accessibility'</code>            | Accessibility settings.                                                                                            |
 
 </docgen-api>

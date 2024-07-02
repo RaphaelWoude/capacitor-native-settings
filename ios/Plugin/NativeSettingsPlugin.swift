@@ -32,7 +32,8 @@ public class NativeSettingsPlugin: CAPPlugin {
         "tethering": "App-prefs:INTERNET_TETHERING",
         "doNotDisturb": "App-prefs:DO_NOT_DISTURB",
         "touchIdPasscode": "App-prefs:TOUCHID_PASSCODE",
-        "screenTime": "App-prefs:SCREEN_TIME"
+        "screenTime": "App-prefs:SCREEN_TIME",
+        "accessibility": "App-prefs:ACCESSIBILITY"
     ]
 
     @objc func open(_ call: CAPPluginCall) {
