@@ -33,7 +33,7 @@ public class NativeSettingsPlugin: CAPPlugin {
         "doNotDisturb": "App-prefs:DO_NOT_DISTURB",
         "touchIdPasscode": "App-prefs:TOUCHID_PASSCODE",
         "screenTime": "App-prefs:SCREEN_TIME",
-        "accessibility": "App-prefs:General&path=ACCESSIBILITY"
+        "accessibility": "App-prefs:ACCESSIBILITY"
     ]
 
     @objc func open(_ call: CAPPluginCall) {
