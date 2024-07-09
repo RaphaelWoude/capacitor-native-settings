@@ -418,4 +418,9 @@ export enum IOSSettings {
    * Screen Time settings.
    */
   ScreenTime = 'screenTime',
+
+  /**
+   * Accessibility settings.
+   */
+  Accessibility = 'accessibility',
 }
