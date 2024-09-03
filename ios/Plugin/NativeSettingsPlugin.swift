@@ -53,6 +53,8 @@ public class NativeSettingsPlugin: CAPPlugin {
             settingsUrl = URL(string: settingsPaths[option]!)
         } else if option == "app" {
             settingsUrl = URL(string: UIApplication.openSettingsURLString)
+        } else if option == "appNotification" {
+            settingsUrl = URL(string: UIApplication.openNotificationSettingsURLString)
         } else {
             call.reject("Requested setting \"" + option + "\" is not available on iOS.")
             return
