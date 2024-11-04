@@ -202,38 +202,39 @@ might break in future iOS versions or have your app rejected in the App Store.
 
 #### IOSSettings
 
-| Members                        | Value                                   | Description                                                                                                        |
-| ------------------------------ | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| **`About`**                    | <code>'about'</code>                    | Settings &gt; About page                                                                                           |
-| **`App`**                      | <code>'app'</code>                      | Opens your app-specific settings screen. Note that this is the only officially supported settings screen by Apple. |
-| **`AutoLock`**                 | <code>'autoLock'</code>                 | Used to set if and when the screen should be automatically locked.                                                 |
-| **`Bluetooth`**                | <code>'bluetooth'</code>                | Bluetooth settings. Allows the users to enable/disable bluetooth and to search for devices.                        |
-| **`DateTime`**                 | <code>'dateTime'</code>                 | Date and time settings.                                                                                            |
-| **`FaceTime`**                 | <code>'facetime'</code>                 | FaceTime settings.                                                                                                 |
-| **`General`**                  | <code>'general'</code>                  | Opens iOS general settings screen.                                                                                 |
-| **`Keyboard`**                 | <code>'keyboard'</code>                 | Keyboard settings.                                                                                                 |
-| **`ICloud`**                   | <code>'iCloud'</code>                   | iCloud settings.                                                                                                   |
-| **`ICloudStorageBackup`**      | <code>'iCloudStorageBackup'</code>      | iCloud Storage and Backup settings.                                                                                |
-| **`International`**            | <code>'international'</code>            | Language and region settings.                                                                                      |
-| **`LocationServices`**         | <code>'locationServices'</code>         | Show settings to allow configuration of current location sources                                                   |
-| **`Music`**                    | <code>'music'</code>                    | Music settings.                                                                                                    |
-| **`Notes`**                    | <code>'notes'</code>                    | Notes settings.                                                                                                    |
-| **`Notifications`**            | <code>'notifications'</code>            | Notifications settings.                                                                                            |
-| **`Phone`**                    | <code>'phone'</code>                    | Phone settings.                                                                                                    |
-| **`Photos`**                   | <code>'photos'</code>                   | Photos settings.                                                                                                   |
-| **`ManagedConfigurationList`** | <code>'managedConfigurationList'</code> | Allows the user to manage configuration profiles that are installed on the phone.                                  |
-| **`Reset`**                    | <code>'reset'</code>                    | Screen where the user can reset the phone to factory settings.                                                     |
-| **`Ringtone`**                 | <code>'ringtone'</code>                 | Ringtone settings.                                                                                                 |
-| **`Sounds`**                   | <code>'sounds'</code>                   | Used to set phone volume, vibration settings, etc.                                                                 |
-| **`SoftwareUpdate`**           | <code>'softwareUpdate'</code>           | Software update screen.                                                                                            |
-| **`Store`**                    | <code>'store'</code>                    | Store settings.                                                                                                    |
-| **`Tracking`**                 | <code>'tracking'</code>                 | Tracking settings.                                                                                                 |
-| **`Wallpaper`**                | <code>'wallpaper'</code>                | Wallpaper settings.                                                                                                |
-| **`WiFi`**                     | <code>'wifi'</code>                     | WiFi settings.                                                                                                     |
-| **`Tethering`**                | <code>'tethering'</code>                | Tethering settings (used to create a hotspot with mobile data).                                                    |
-| **`DoNotDisturb`**             | <code>'doNotDisturb'</code>             | Do Not Disturb settings.                                                                                           |
-| **`TouchIdPasscode`**          | <code>'touchIdPasscode'</code>          | Touch id passcode settings.                                                                                        |
-| **`ScreenTime`**               | <code>'screenTime'</code>               | Screen Time settings.                                                                                              |
-| **`Accessibility`**            | <code>'accessibility'</code>            | Accessibility settings.                                                                                            |
+| Members                        | Value                                   | Description                                                                                                               |
+| ------------------------------ | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| **`About`**                    | <code>'about'</code>                    | Settings &gt; About page                                                                                                  |
+| **`App`**                      | <code>'app'</code>                      | Opens your app-specific settings screen. Note that this is the only officially supported settings screen by Apple.        |
+| **`AppNotification`**          | <code>'appNotification'</code>          | Opens app-specific notification settings screen for iOS 15.4+; opens general app-specific settings for earlier versions." |
+| **`AutoLock`**                 | <code>'autoLock'</code>                 | Used to set if and when the screen should be automatically locked.                                                        |
+| **`Bluetooth`**                | <code>'bluetooth'</code>                | Bluetooth settings. Allows the users to enable/disable bluetooth and to search for devices.                               |
+| **`DateTime`**                 | <code>'dateTime'</code>                 | Date and time settings.                                                                                                   |
+| **`FaceTime`**                 | <code>'facetime'</code>                 | FaceTime settings.                                                                                                        |
+| **`General`**                  | <code>'general'</code>                  | Opens iOS general settings screen.                                                                                        |
+| **`Keyboard`**                 | <code>'keyboard'</code>                 | Keyboard settings.                                                                                                        |
+| **`ICloud`**                   | <code>'iCloud'</code>                   | iCloud settings.                                                                                                          |
+| **`ICloudStorageBackup`**      | <code>'iCloudStorageBackup'</code>      | iCloud Storage and Backup settings.                                                                                       |
+| **`International`**            | <code>'international'</code>            | Language and region settings.                                                                                             |
+| **`LocationServices`**         | <code>'locationServices'</code>         | Show settings to allow configuration of current location sources                                                          |
+| **`Music`**                    | <code>'music'</code>                    | Music settings.                                                                                                           |
+| **`Notes`**                    | <code>'notes'</code>                    | Notes settings.                                                                                                           |
+| **`Notifications`**            | <code>'notifications'</code>            | Notifications settings.                                                                                                   |
+| **`Phone`**                    | <code>'phone'</code>                    | Phone settings.                                                                                                           |
+| **`Photos`**                   | <code>'photos'</code>                   | Photos settings.                                                                                                          |
+| **`ManagedConfigurationList`** | <code>'managedConfigurationList'</code> | Allows the user to manage configuration profiles that are installed on the phone.                                         |
+| **`Reset`**                    | <code>'reset'</code>                    | Screen where the user can reset the phone to factory settings.                                                            |
+| **`Ringtone`**                 | <code>'ringtone'</code>                 | Ringtone settings.                                                                                                        |
+| **`Sounds`**                   | <code>'sounds'</code>                   | Used to set phone volume, vibration settings, etc.                                                                        |
+| **`SoftwareUpdate`**           | <code>'softwareUpdate'</code>           | Software update screen.                                                                                                   |
+| **`Store`**                    | <code>'store'</code>                    | Store settings.                                                                                                           |
+| **`Tracking`**                 | <code>'tracking'</code>                 | Tracking settings.                                                                                                        |
+| **`Wallpaper`**                | <code>'wallpaper'</code>                | Wallpaper settings.                                                                                                       |
+| **`WiFi`**                     | <code>'wifi'</code>                     | WiFi settings.                                                                                                            |
+| **`Tethering`**                | <code>'tethering'</code>                | Tethering settings (used to create a hotspot with mobile data).                                                           |
+| **`DoNotDisturb`**             | <code>'doNotDisturb'</code>             | Do Not Disturb settings.                                                                                                  |
+| **`TouchIdPasscode`**          | <code>'touchIdPasscode'</code>          | Touch id passcode settings.                                                                                               |
+| **`ScreenTime`**               | <code>'screenTime'</code>               | Screen Time settings.                                                                                                     |
+| **`Accessibility`**            | <code>'accessibility'</code>            | Accessibility settings.                                                                                                   |
 
 </docgen-api>
