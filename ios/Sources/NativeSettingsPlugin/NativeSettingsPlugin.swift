@@ -2,7 +2,19 @@ import Foundation
 import Capacitor
 
 @objc(NativeSettingsPlugin)
-public class NativeSettingsPlugin: CAPPlugin {
+public class NativeSettingsPlugin: CAPPlugin, CAPBridgedPlugin {
+
+    /// The unique identifier for the plugin.
+    public let identifier = "NativeSettingsPlugin"
+
+    /// The name used to reference this plugin in JavaScript.
+    public let jsName = "NativeSettings"
+
+    public let pluginMethods: [CAPPluginMethod] = [
+        CAPPluginMethod(name: "openIOS", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "open", returnType: CAPPluginReturnPromise)
+    ]
+
     let settingsPaths = [
         "about": "App-prefs:General&path=About",
         "autoLock": "App-prefs:General&path=AUTOLOCK",

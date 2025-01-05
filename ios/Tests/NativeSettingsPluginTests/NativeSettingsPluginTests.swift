@@ -1,5 +1,5 @@
 import XCTest
-@testable import Plugin
+@testable import NativeSettingsPlugin
 
 class NativeSettingsTests: XCTestCase {
     override func setUp() {
