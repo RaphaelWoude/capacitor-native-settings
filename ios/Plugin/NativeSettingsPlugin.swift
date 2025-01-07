@@ -53,20 +53,29 @@ public class NativeSettingsPlugin: CAPPlugin {
             settingsUrl = URL(string: settingsPaths[option]!)
         } else if option == "app" {
             settingsUrl = URL(string: UIApplication.openSettingsURLString)
+        } else if option == "appNotification" {
+            if #available(iOS 16.0, *) {
+                settingsUrl = URL(string: UIApplication.openNotificationSettingsURLString)
+            } else {
+                settingsUrl = URL(string: UIApplication.openSettingsURLString)
+            }
         } else {
             call.reject("Requested setting \"" + option + "\" is not available on iOS.")
             return
         }
 
         DispatchQueue.main.async {
-            if UIApplication.shared.canOpenURL(settingsUrl) {
-                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
-                    call.resolve([
-                        "status": success
-                    ])
-                })
-            } else {
+            guard UIApplication.shared.canOpenURL(settingsUrl) else {
                 call.reject("Cannot open settings")
+                return
+            }
+            
+            UIApplication.shared.open(settingsUrl) { success in
+                if success {
+                    call.resolve(["status": success])
+                } else {
+                    call.reject("Failed to open settings")
+                }
             }
         }
     }
