@@ -2,9 +2,7 @@ import { WebPlugin } from '@capacitor/core';
 
 import type { NativeSettingsPlugin } from './definitions';
 
-export class NativeSettingsWeb
-  extends WebPlugin
-  implements NativeSettingsPlugin {
+export class NativeSettingsWeb extends WebPlugin implements NativeSettingsPlugin {
   /**
    * Open iOS & Android settings.
    * Not implemented for web!
