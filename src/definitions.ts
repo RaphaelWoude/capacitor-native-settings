@@ -428,4 +428,23 @@ export enum IOSSettings {
    * Accessibility settings.
    */
   Accessibility = 'accessibility',
+
+  /**
+   * Zen mode settings.
+   */
+  ZenMode = 'zen_mode',
+
+  /**
+   * Zen mode priority settings.
+   * Note that this may not work on every single device.
+   * See: https://github.com/RaphaelWoude/capacitor-native-settings/pull/63
+   */
+  ZenModePriority = 'zen_mode_priority',
+
+  /**
+   * Zen mode blocked effects settings.
+   * Note that this may not work on every single device.
+   * See: https://github.com/RaphaelWoude/capacitor-native-settings/pull/63
+   */
+  ZenModeBlockedEffects = 'zen_mode_blocked_effects',
 }
