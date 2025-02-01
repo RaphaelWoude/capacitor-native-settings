@@ -267,7 +267,6 @@ export enum AndroidSettings {
    */
   Wireless = 'wireless',
 
-  
   /**
    * Zen mode settings.
    */
