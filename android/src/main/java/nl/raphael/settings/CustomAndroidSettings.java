@@ -17,5 +17,4 @@ public class CustomAndroidSettings {
      * Activity Action: Show Zen Mode visual effects configuration settings.
      */
     public static final String ACTION_ZEN_MODE_BLOCKED_EFFECTS_SETTINGS = "android.settings.ZEN_MODE_BLOCKED_EFFECTS_SETTINGS";
-
 }
