@@ -2,7 +2,19 @@ import Foundation
 import Capacitor
 
 @objc(NativeSettingsPlugin)
-public class NativeSettingsPlugin: CAPPlugin {
+public class NativeSettingsPlugin: CAPPlugin, CAPBridgedPlugin {
+
+    /// The unique identifier for the plugin.
+    public let identifier = "NativeSettingsPlugin"
+
+    /// The name used to reference this plugin in JavaScript.
+    public let jsName = "NativeSettings"
+
+    public let pluginMethods: [CAPPluginMethod] = [
+        CAPPluginMethod(name: "openIOS", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "open", returnType: CAPPluginReturnPromise)
+    ]
+
     let settingsPaths = [
         "about": "App-prefs:General&path=About",
         "autoLock": "App-prefs:General&path=AUTOLOCK",
@@ -45,12 +57,12 @@ public class NativeSettingsPlugin: CAPPlugin {
         let option = call.getString("option") ?? ""
         handleOpen(call: call, option: option)
     }
-    
-    @objc private func handleOpen(call: CAPPluginCall, option: String) {
-        var settingsUrl: URL!
 
-        if settingsPaths[option] != nil {
-            settingsUrl = URL(string: settingsPaths[option]!)
+    @objc private func handleOpen(call: CAPPluginCall, option: String) {
+        var settingsUrl: URL?
+
+        if let path = settingsPaths[option], let url = URL(string: path) {
+            settingsUrl = url
         } else if option == "app" {
             settingsUrl = URL(string: UIApplication.openSettingsURLString)
         } else if option == "appNotification" {
@@ -64,13 +76,13 @@ public class NativeSettingsPlugin: CAPPlugin {
             return
         }
 
+        guard let validUrl = settingsUrl, UIApplication.shared.canOpenURL(validUrl) else {
+            call.reject("Cannot open settings or invalid URL")
+            return
+        }
+
         DispatchQueue.main.async {
-            guard UIApplication.shared.canOpenURL(settingsUrl) else {
-                call.reject("Cannot open settings")
-                return
-            }
-            
-            UIApplication.shared.open(settingsUrl) { success in
+            UIApplication.shared.open(validUrl) { success in
                 if success {
                     call.resolve(["status": success])
                 } else {
