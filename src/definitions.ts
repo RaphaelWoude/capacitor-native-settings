@@ -446,5 +446,5 @@ export enum IOSSettings {
    * Note that this may not work on every single device.
    * See: https://github.com/RaphaelWoude/capacitor-native-settings/pull/63
    */
-  ZenModeBlockedEffects = 'zen_mode_blocked_effects'
+  ZenModeBlockedEffects = 'zen_mode_blocked_effects',
 }
