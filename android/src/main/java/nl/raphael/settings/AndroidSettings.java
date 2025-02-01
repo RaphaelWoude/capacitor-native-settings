@@ -29,6 +29,7 @@ import static android.provider.Settings.ACTION_NETWORK_OPERATOR_SETTINGS;
 import static android.provider.Settings.ACTION_NFCSHARING_SETTINGS;
 import static android.provider.Settings.ACTION_NFC_PAYMENT_SETTINGS;
 import static android.provider.Settings.ACTION_NFC_SETTINGS;
+import static android.provider.Settings.ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS;
 import static android.provider.Settings.ACTION_PRINT_SETTINGS;
 import static android.provider.Settings.ACTION_PRIVACY_SETTINGS;
 import static android.provider.Settings.ACTION_QUICK_LAUNCH_SETTINGS;
@@ -44,6 +45,9 @@ import static android.provider.Settings.ACTION_VOICE_INPUT_SETTINGS;
 import static android.provider.Settings.ACTION_WIFI_IP_SETTINGS;
 import static android.provider.Settings.ACTION_WIFI_SETTINGS;
 import static android.provider.Settings.ACTION_WIRELESS_SETTINGS;
+import static android.provider.Settings.ACTION_ZEN_MODE_PRIORITY_SETTINGS;
+import static nl.raphael.settings.CustomAndroidSettings.ACTION_ZEN_MODE_BLOCKED_EFFECTS_SETTINGS;
+import static nl.raphael.settings.CustomAndroidSettings.ACTION_ZEN_MODE_SETTINGS;
 
 public enum AndroidSettings {
     Accessibility("accessibility", ACTION_ACCESSIBILITY_SETTINGS),
@@ -54,6 +58,7 @@ public enum AndroidSettings {
     ApplicationDevelopment("application_development", ACTION_APPLICATION_DEVELOPMENT_SETTINGS),
     Application("application", ACTION_APPLICATION_SETTINGS),
     AppNotification("app_notification", ACTION_APP_NOTIFICATION_SETTINGS),
+    AppNotifcationPolicy("app_notification_policy", ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS),
     BatteryOptimization("battery_optimization", ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS),
     Bluetooth("bluetooth", ACTION_BLUETOOTH_SETTINGS),
     Captioning("captioning", ACTION_CAPTIONING_SETTINGS),
@@ -89,7 +94,10 @@ public enum AndroidSettings {
     VoiceInput("voice_input", ACTION_VOICE_INPUT_SETTINGS),
     Wifi("wifi", ACTION_WIFI_SETTINGS),
     WifiIp("wifi_ip", ACTION_WIFI_IP_SETTINGS),
-    Wireless("wireless", ACTION_WIRELESS_SETTINGS);
+    Wireless("wireless", ACTION_WIRELESS_SETTINGS),
+    ZenMode("zen_mode", ACTION_ZEN_MODE_SETTINGS),
+    ZenModePriority("zen_mode_priority", ACTION_ZEN_MODE_PRIORITY_SETTINGS),
+    ZenModeBlockedEffects("zen_mode_blocked_effects", ACTION_ZEN_MODE_BLOCKED_EFFECTS_SETTINGS);
 
     private final String value;
     private final String setting;
