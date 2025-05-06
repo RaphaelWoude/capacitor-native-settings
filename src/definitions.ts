@@ -238,6 +238,11 @@ export enum AndroidSettings {
   Sync = 'sync',
 
   /**
+   * Show settings for configuring Text-to-Speech (TTS) output
+   */
+  TextToSpeech = 'text_to_speech',
+
+  /**
    * Show settings to control access to usage information
    */
   Usage = 'usage',

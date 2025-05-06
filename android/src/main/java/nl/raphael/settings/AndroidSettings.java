@@ -46,6 +46,7 @@ import static android.provider.Settings.ACTION_WIFI_IP_SETTINGS;
 import static android.provider.Settings.ACTION_WIFI_SETTINGS;
 import static android.provider.Settings.ACTION_WIRELESS_SETTINGS;
 import static android.provider.Settings.ACTION_ZEN_MODE_PRIORITY_SETTINGS;
+import static nl.raphael.settings.CustomAndroidSettings.ACTION_TTS_SETTINGS;
 import static nl.raphael.settings.CustomAndroidSettings.ACTION_ZEN_MODE_BLOCKED_EFFECTS_SETTINGS;
 import static nl.raphael.settings.CustomAndroidSettings.ACTION_ZEN_MODE_SETTINGS;
 
@@ -89,6 +90,7 @@ public enum AndroidSettings {
     Sound("sound", ACTION_SOUND_SETTINGS),
     Storage("storage", ACTION_INTERNAL_STORAGE_SETTINGS),
     Sync("sync", ACTION_SYNC_SETTINGS),
+    TextToSpeech("text_to_speech", ACTION_TTS_SETTINGS),
     Usage("usage", ACTION_USAGE_ACCESS_SETTINGS),
     UserDictionary("user_dictionary", ACTION_USER_DICTIONARY_SETTINGS),
     VoiceInput("voice_input", ACTION_VOICE_INPUT_SETTINGS),
