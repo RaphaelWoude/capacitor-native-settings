@@ -45,7 +45,8 @@ public class NativeSettingsPlugin: CAPPlugin, CAPBridgedPlugin {
         "doNotDisturb": "App-prefs:DO_NOT_DISTURB",
         "touchIdPasscode": "App-prefs:TOUCHID_PASSCODE",
         "screenTime": "App-prefs:SCREEN_TIME",
-        "accessibility": "App-prefs:ACCESSIBILITY"
+        "accessibility": "App-prefs:ACCESSIBILITY",
+        "vpn": "App-prefs:VPN"
     ]
 
     @objc func open(_ call: CAPPluginCall) {
