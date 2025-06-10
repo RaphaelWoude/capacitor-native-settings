@@ -253,6 +253,11 @@ export enum AndroidSettings {
   VoiceInput = 'voice_input',
 
   /**
+   * Show settings to allow configuration of VPN
+   */
+  VPN = 'vpn',
+
+  /**
    * Show settings to allow configuration of Wi-Fi
    */
   Wifi = 'wifi',
@@ -412,6 +417,11 @@ export enum IOSSettings {
    * Tracking settings.
    */
   Tracking = 'tracking',
+
+  /**
+   * VPN settings.
+   */
+  VPN = 'vpn',
 
   /**
    * Wallpaper settings.
