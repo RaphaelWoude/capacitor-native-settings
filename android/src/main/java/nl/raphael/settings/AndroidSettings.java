@@ -42,6 +42,7 @@ import static android.provider.Settings.ACTION_SYNC_SETTINGS;
 import static android.provider.Settings.ACTION_USAGE_ACCESS_SETTINGS;
 import static android.provider.Settings.ACTION_USER_DICTIONARY_SETTINGS;
 import static android.provider.Settings.ACTION_VOICE_INPUT_SETTINGS;
+import static android.provider.Settings.ACTION_VPN_SETTINGS;
 import static android.provider.Settings.ACTION_WIFI_IP_SETTINGS;
 import static android.provider.Settings.ACTION_WIFI_SETTINGS;
 import static android.provider.Settings.ACTION_WIRELESS_SETTINGS;
@@ -94,6 +95,7 @@ public enum AndroidSettings {
     Usage("usage", ACTION_USAGE_ACCESS_SETTINGS),
     UserDictionary("user_dictionary", ACTION_USER_DICTIONARY_SETTINGS),
     VoiceInput("voice_input", ACTION_VOICE_INPUT_SETTINGS),
+    VPN("vpn", ACTION_VPN_SETTINGS),
     Wifi("wifi", ACTION_WIFI_SETTINGS),
     WifiIp("wifi_ip", ACTION_WIFI_IP_SETTINGS),
     Wireless("wireless", ACTION_WIRELESS_SETTINGS),
