@@ -79,8 +79,8 @@ Opens the specified options on android & ios.
 Note that the only supported option by Apple is "App". Using other options
 might break in future iOS versions or have your app rejected in the App Store.
 
-Also note that the iOS Simulator will sometimes only open the Settings app,
-instead of the specified option, including the officially supported "App".
+**Also note that the iOS Simulator will sometimes only open the Settings app,
+instead of the specified option, including the officially supported "App".**
 
 | Param        | Type                                                        | Description                                    |
 | ------------ | ----------------------------------------------------------- | ---------------------------------------------- |
@@ -123,8 +123,8 @@ This can be done by checking the platform before hand.
 Note that the only supported option by Apple is "App". Using other options
 might break in future iOS versions or have your app rejected in the App Store.
 
-Also note that the iOS Simulator will sometimes only open the Settings app,
-instead of the specified option, including the officially supported "App".
+**Also note that the iOS Simulator will sometimes only open the Settings app,
+instead of the specified option, including the officially supported "App".**
 
 | Param        | Type                                              | Description                          |
 | ------------ | ------------------------------------------------- | ------------------------------------ |
