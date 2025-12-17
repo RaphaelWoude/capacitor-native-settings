@@ -16,6 +16,8 @@ DerivedData/
 .swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
 .netrc
 
+# VSCode
+.vscode
 
 # macOS files
 .DS_Store

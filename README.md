@@ -4,13 +4,14 @@ Capacitor plugin to open native settings screens for Android and iOS.
 
 ## Plugin versions
 
-| Capacitor version | Plugin version                                    |
-| ---------- | ----------------------------------------- |
-| v7 | >= v7.0.1 |
-| v6 | >= v6.0.0 |
-| v5 | >= v5.0.0 |
-| v4 | >= v4.0.0 |
-| v3 | <= v2.0.1 |
+| Capacitor version | Plugin version |
+| ----------------- | -------------- |
+| v8                | >= v8.0.0      |
+| v7                | >= v7.0.1      |
+| v6                | >= v6.0.0      |
+| v5                | >= v5.0.0      |
+| v4                | >= v4.0.0      |
+| v3                | <= v2.0.1      |
 
 ## Install
 
@@ -21,31 +22,52 @@ npx cap sync
 
 ## Example
 
-```JS
+> **Note**
+>
+> Starting from **v8**, plugin methods **never reject promises**.
+> Errors are returned in the resolved object as `{ success: false, error }`.
+
+```js
 import { NativeSettings, AndroidSettings, IOSSettings } from 'capacitor-native-settings';
 
 /**
- * Note that the only supported option by Apple is "App".
- * Using other options might break in future iOS versions
- * or have your app rejected from the App Store.
+ * ⚠️ iOS limitation
+ *
+ * Apple officially supports opening only the app-specific settings screen.
+ * Other options rely on undocumented URL schemes and may stop working
+ * or cause App Store rejection.
  */
-NativeSettings.open({
-  optionAndroid: AndroidSettings.ApplicationDetails, 
-  optionIOS: IOSSettings.App
-})
+const result = await NativeSettings.open({
+  optionAndroid: AndroidSettings.ApplicationDetails,
+  optionIOS: IOSSettings.App,
+});
 
-NativeSettings.openAndroid({
+if (!result.success) {
+  console.error(result.error);
+}
+
+const androidResult = await NativeSettings.openAndroid({
   option: AndroidSettings.ApplicationDetails,
 });
 
+if (!androidResult.success) {
+  console.error(androidResult.error);
+}
+
 /**
- * Note that the only supported option by Apple is "App".
- * Using other options might break in future iOS versions
- * or have your app rejected from the App Store.
+ * ⚠️ iOS limitation
+ *
+ * Apple officially supports opening only the app-specific settings screen.
+ * Other options rely on undocumented URL schemes and may stop working
+ * or cause App Store rejection.
  */
-NativeSettings.openIOS({
+const iosResult = await NativeSettings.openIOS({
   option: IOSSettings.App,
 });
+
+if (!iosResult.success) {
+  console.error(iosResult.error);
+}
 ```
 
 ## API
@@ -63,21 +85,23 @@ NativeSettings.openIOS({
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
+Capacitor NativeSettings plugin interface.
+
+Provides access to native Android and iOS system settings screens.
+
 ### open(...)
 
 ```typescript
-open(option: PlatformOptions) => Promise<{ status: boolean; }>
+open(options: PlatformOptions) => Promise<NativeSettingsResult>
 ```
 
-Opens the specified options on android & ios.
-Note that the only supported option by Apple is "App". Using other options
-might break in future iOS versions or have your app rejected in the App Store.
+Opens the specified settings option on the current platform.
 
-| Param        | Type                                                        | Description                                    |
-| ------------ | ----------------------------------------------------------- | ---------------------------------------------- |
-| **`option`** | <code><a href="#platformoptions">PlatformOptions</a></code> | <a href="#platformoptions">PlatformOptions</a> |
+| Param         | Type                                                        | Description                         |
+| ------------- | ----------------------------------------------------------- | ----------------------------------- |
+| **`options`** | <code><a href="#platformoptions">PlatformOptions</a></code> | Platform-specific settings options. |
 
-**Returns:** <code>Promise&lt;{ status: boolean; }&gt;</code>
+**Returns:** <code>Promise&lt;<a href="#nativesettingsresult">NativeSettingsResult</a>&gt;</code>
 
 --------------------
 
@@ -85,18 +109,16 @@ might break in future iOS versions or have your app rejected in the App Store.
 ### openAndroid(...)
 
 ```typescript
-openAndroid(option: AndroidOptions) => Promise<{ status: boolean; }>
+openAndroid(options: AndroidOptions) => Promise<NativeSettingsResult>
 ```
 
-Opens the specified option in android.
-Only use this if you have made sure the user is on android.
-This can be done by checking the platform before hand.
+Opens the specified Android settings screen.
 
-| Param        | Type                                                      | Description                                  |
-| ------------ | --------------------------------------------------------- | -------------------------------------------- |
-| **`option`** | <code><a href="#androidoptions">AndroidOptions</a></code> | <a href="#androidoptions">AndroidOptions</a> |
+| Param         | Type                                                      | Description               |
+| ------------- | --------------------------------------------------------- | ------------------------- |
+| **`options`** | <code><a href="#androidoptions">AndroidOptions</a></code> | Android settings options. |
 
-**Returns:** <code>Promise&lt;{ status: boolean; }&gt;</code>
+**Returns:** <code>Promise&lt;<a href="#nativesettingsresult">NativeSettingsResult</a>&gt;</code>
 
 --------------------
 
@@ -104,21 +126,16 @@ This can be done by checking the platform before hand.
 ### openIOS(...)
 
 ```typescript
-openIOS(option: IOSOptions) => Promise<{ status: boolean; }>
+openIOS(options: IOSOptions) => Promise<NativeSettingsResult>
 ```
 
-Opens the specified option on iOS.
-Only use this if you have made sure the user is on iOS.
-This can be done by checking the platform before hand.
+Opens the specified iOS settings screen.
 
-Note that the only supported option by Apple is "App". Using other options
-might break in future iOS versions or have your app rejected in the App Store.
+| Param         | Type                                              | Description           |
+| ------------- | ------------------------------------------------- | --------------------- |
+| **`options`** | <code><a href="#iosoptions">IOSOptions</a></code> | iOS settings options. |
 
-| Param        | Type                                              | Description                          |
-| ------------ | ------------------------------------------------- | ------------------------------------ |
-| **`option`** | <code><a href="#iosoptions">IOSOptions</a></code> | <a href="#iosoptions">IOSOptions</a> |
-
-**Returns:** <code>Promise&lt;{ status: boolean; }&gt;</code>
+**Returns:** <code>Promise&lt;<a href="#nativesettingsresult">NativeSettingsResult</a>&gt;</code>
 
 --------------------
 
@@ -126,7 +143,19 @@ might break in future iOS versions or have your app rejected in the App Store.
 ### Interfaces
 
 
+#### NativeSettingsResult
+
+Result returned by native settings operations.
+
+| Prop          | Type                 | Description                                     |
+| ------------- | -------------------- | ----------------------------------------------- |
+| **`success`** | <code>boolean</code> | Indicates whether the operation succeeded.      |
+| **`error`**   | <code>string</code>  | Optional error message if the operation failed. |
+
+
 #### PlatformOptions
+
+Platform-specific options.
 
 | Prop                | Type                                                        |
 | ------------------- | ----------------------------------------------------------- |
@@ -136,12 +165,16 @@ might break in future iOS versions or have your app rejected in the App Store.
 
 #### AndroidOptions
 
+Android-only options.
+
 | Prop         | Type                                                        |
 | ------------ | ----------------------------------------------------------- |
 | **`option`** | <code><a href="#androidsettings">AndroidSettings</a></code> |
 
 
 #### IOSOptions
+
+iOS-only options.
 
 | Prop         | Type                                                |
 | ------------ | --------------------------------------------------- |
@@ -196,8 +229,8 @@ might break in future iOS versions or have your app rejected in the App Store.
 | **`TextToSpeech`**           | <code>'text_to_speech'</code>           | Show settings for configuring Text-to-Speech (TTS) output                                                                                                     |
 | **`Usage`**                  | <code>'usage'</code>                    | Show settings to control access to usage information                                                                                                          |
 | **`UserDictionary`**         | <code>'user_dictionary'</code>          | Show settings to manage the user input dictionary                                                                                                             |
-| **`VoiceInput`**             | <code>'voice_input'</code>              | Show settings to configure input methods, in particular allowing the user to enable input methods                                                                                                                 |
-| **`VPN`**             | <code>'vpn'</code>              | Show settings to allow configuration of VPN                                                                                                                 |
+| **`VoiceInput`**             | <code>'voice_input'</code>              | Show settings to configure input methods, in particular allowing the user to enable input methods                                                             |
+| **`VPN`**                    | <code>'vpn'</code>                      | Show settings to allow configuration of VPN                                                                                                                   |
 | **`Wifi`**                   | <code>'wifi'</code>                     | Show settings to allow configuration of Wi-Fi                                                                                                                 |
 | **`WifiIp`**                 | <code>'wifi_ip'</code>                  | Show settings to allow configuration of a static IP address for Wi-Fi                                                                                         |
 | **`Wireless`**               | <code>'wireless'</code>                 | Show settings to allow configuration of wireless controls such as Wi-Fi, Bluetooth and Mobile networks                                                        |
@@ -235,7 +268,7 @@ might break in future iOS versions or have your app rejected in the App Store.
 | **`SoftwareUpdate`**           | <code>'softwareUpdate'</code>           | Software update screen.                                                                                                   |
 | **`Store`**                    | <code>'store'</code>                    | Store settings.                                                                                                           |
 | **`Tracking`**                 | <code>'tracking'</code>                 | Tracking settings.                                                                                                        |
-| **`VPN`**                | <code>'vpn'</code>                | VPN settings.                                                                                                       |
+| **`VPN`**                      | <code>'vpn'</code>                      | VPN settings.                                                                                                             |
 | **`Wallpaper`**                | <code>'wallpaper'</code>                | Wallpaper settings.                                                                                                       |
 | **`WiFi`**                     | <code>'wifi'</code>                     | WiFi settings.                                                                                                            |
 | **`Tethering`**                | <code>'tethering'</code>                | Tethering settings (used to create a hotspot with mobile data).                                                           |

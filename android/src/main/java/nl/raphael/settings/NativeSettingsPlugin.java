@@ -6,7 +6,9 @@ import static android.provider.Settings.EXTRA_APP_PACKAGE;
 
 import android.content.Intent;
 import android.net.Uri;
+
 import androidx.activity.result.ActivityResult;
+
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
@@ -14,45 +16,57 @@ import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.ActivityCallback;
 import com.getcapacitor.annotation.CapacitorPlugin;
 
+/**
+ * Capacitor plugin that opens Android system settings screens.
+ *
+ * <p>This plugin acts as a bridge between JavaScript and native Android
+ * settings intents.</p>
+ */
 @CapacitorPlugin(name = "NativeSettings")
 public class NativeSettingsPlugin extends Plugin {
 
+    /**
+     * Opens an Android system settings screen (legacy key).
+     *
+     * @param call Capacitor plugin call
+     */
     @PluginMethod
     public void open(PluginCall call) {
-        String option = call.getString("optionAndroid");
-        String setting = AndroidSettings.getAction(option);
-
-        // Check if settings is available.
-        if (setting == null) {
-            call.reject("Could not find native android setting: " + option);
-            return;
-        }
-
-        this.openOption(call, setting);
+        openInternal(call, call.getString("optionAndroid"));
     }
 
+    /**
+     * Opens an Android system settings screen.
+     *
+     * @param call Capacitor plugin call
+     */
     @PluginMethod
     public void openAndroid(PluginCall call) {
-        String option = call.getString("option");
-        String setting = AndroidSettings.getAction(option);
+        openInternal(call, call.getString("option"));
+    }
 
-        // Check if settings is available.
-        if (setting == null) {
-            call.reject("Could not find native android setting: " + option);
+    private void openInternal(PluginCall call, String option) {
+        if (option == null) {
+            resolveError(call, "Missing option parameter");
             return;
         }
 
-        this.openOption(call, setting);
+        String setting = AndroidSettings.getAction(option);
+        if (setting == null) {
+            resolveError(call, "Unsupported Android setting: " + option);
+            return;
+        }
+
+        openOption(call, setting);
     }
 
     private void openOption(PluginCall call, String setting) {
         Intent intent = new Intent();
 
-        // Application details requires package name as URI.
         if (ACTION_APPLICATION_DETAILS_SETTINGS.equals(setting)) {
             intent.setAction(setting);
             intent.setData(Uri.parse("package:" + getActivity().getPackageName()));
-        } else if (ACTION_APP_NOTIFICATION_SETTINGS.equals(setting)) { // App notification settings requires package name as extra app package.
+        } else if (ACTION_APP_NOTIFICATION_SETTINGS.equals(setting)) {
             intent.setAction(setting);
             intent.putExtra(EXTRA_APP_PACKAGE, getActivity().getPackageName());
         } else {
@@ -63,12 +77,19 @@ public class NativeSettingsPlugin extends Plugin {
     }
 
     /**
-     * Send response on activityResult (when intent closes)
+     * Called when the launched settings activity is closed.
      */
     @ActivityCallback
     private void activityResult(PluginCall call, ActivityResult result) {
-        JSObject js = new JSObject();
-        js.put("status", true);
-        call.resolve(js);
+        JSObject response = new JSObject();
+        response.put("success", true);
+        call.resolve(response);
+    }
+
+    private void resolveError(PluginCall call, String message) {
+        JSObject response = new JSObject();
+        response.put("success", false);
+        response.put("error", message);
+        call.resolve(response);
     }
 }

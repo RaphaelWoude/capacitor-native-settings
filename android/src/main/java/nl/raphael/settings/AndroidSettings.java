@@ -1,57 +1,18 @@
 package nl.raphael.settings;
 
-import static android.provider.Settings.ACTION_ACCESSIBILITY_SETTINGS;
-import static android.provider.Settings.ACTION_ADD_ACCOUNT;
-import static android.provider.Settings.ACTION_AIRPLANE_MODE_SETTINGS;
-import static android.provider.Settings.ACTION_APN_SETTINGS;
-import static android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS;
-import static android.provider.Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS;
-import static android.provider.Settings.ACTION_APPLICATION_SETTINGS;
-import static android.provider.Settings.ACTION_APP_NOTIFICATION_SETTINGS;
-import static android.provider.Settings.ACTION_BLUETOOTH_SETTINGS;
-import static android.provider.Settings.ACTION_CAPTIONING_SETTINGS;
-import static android.provider.Settings.ACTION_CAST_SETTINGS;
-import static android.provider.Settings.ACTION_DATA_ROAMING_SETTINGS;
-import static android.provider.Settings.ACTION_DATE_SETTINGS;
-import static android.provider.Settings.ACTION_DISPLAY_SETTINGS;
-import static android.provider.Settings.ACTION_DREAM_SETTINGS;
-import static android.provider.Settings.ACTION_HOME_SETTINGS;
-import static android.provider.Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS;
-import static android.provider.Settings.ACTION_INPUT_METHOD_SETTINGS;
-import static android.provider.Settings.ACTION_INPUT_METHOD_SUBTYPE_SETTINGS;
-import static android.provider.Settings.ACTION_INTERNAL_STORAGE_SETTINGS;
-import static android.provider.Settings.ACTION_LOCALE_SETTINGS;
-import static android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS;
-import static android.provider.Settings.ACTION_MANAGE_ALL_APPLICATIONS_SETTINGS;
-import static android.provider.Settings.ACTION_MANAGE_APPLICATIONS_SETTINGS;
-import static android.provider.Settings.ACTION_MEMORY_CARD_SETTINGS;
-import static android.provider.Settings.ACTION_NETWORK_OPERATOR_SETTINGS;
-import static android.provider.Settings.ACTION_NFCSHARING_SETTINGS;
-import static android.provider.Settings.ACTION_NFC_PAYMENT_SETTINGS;
-import static android.provider.Settings.ACTION_NFC_SETTINGS;
-import static android.provider.Settings.ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS;
-import static android.provider.Settings.ACTION_PRINT_SETTINGS;
-import static android.provider.Settings.ACTION_PRIVACY_SETTINGS;
-import static android.provider.Settings.ACTION_QUICK_LAUNCH_SETTINGS;
-import static android.provider.Settings.ACTION_SEARCH_SETTINGS;
-import static android.provider.Settings.ACTION_SECURITY_SETTINGS;
-import static android.provider.Settings.ACTION_SETTINGS;
-import static android.provider.Settings.ACTION_SHOW_REGULATORY_INFO;
-import static android.provider.Settings.ACTION_SOUND_SETTINGS;
-import static android.provider.Settings.ACTION_SYNC_SETTINGS;
-import static android.provider.Settings.ACTION_USAGE_ACCESS_SETTINGS;
-import static android.provider.Settings.ACTION_USER_DICTIONARY_SETTINGS;
-import static android.provider.Settings.ACTION_VOICE_INPUT_SETTINGS;
-import static android.provider.Settings.ACTION_VPN_SETTINGS;
-import static android.provider.Settings.ACTION_WIFI_IP_SETTINGS;
-import static android.provider.Settings.ACTION_WIFI_SETTINGS;
-import static android.provider.Settings.ACTION_WIRELESS_SETTINGS;
-import static android.provider.Settings.ACTION_ZEN_MODE_PRIORITY_SETTINGS;
-import static nl.raphael.settings.CustomAndroidSettings.ACTION_TTS_SETTINGS;
-import static nl.raphael.settings.CustomAndroidSettings.ACTION_ZEN_MODE_BLOCKED_EFFECTS_SETTINGS;
-import static nl.raphael.settings.CustomAndroidSettings.ACTION_ZEN_MODE_SETTINGS;
+import static android.provider.Settings.*;
 
+/**
+ * Enumeration of supported Android system settings.
+ *
+ * <p>Each enum constant maps a public JavaScript-facing key to a corresponding
+ * Android {@link android.provider.Settings} intent action.</p>
+ *
+ * <p>This enum is used to resolve a requested settings option into a concrete
+ * Android intent action string.</p>
+ */
 public enum AndroidSettings {
+
     Accessibility("accessibility", ACTION_ACCESSIBILITY_SETTINGS),
     Account("account", ACTION_ADD_ACCOUNT),
     AirplaneMode("airplane_mode", ACTION_AIRPLANE_MODE_SETTINGS),
@@ -60,7 +21,7 @@ public enum AndroidSettings {
     ApplicationDevelopment("application_development", ACTION_APPLICATION_DEVELOPMENT_SETTINGS),
     Application("application", ACTION_APPLICATION_SETTINGS),
     AppNotification("app_notification", ACTION_APP_NOTIFICATION_SETTINGS),
-    AppNotifcationPolicy("app_notification_policy", ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS),
+    AppNotificationPolicy("app_notification_policy", ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS),
     BatteryOptimization("battery_optimization", ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS),
     Bluetooth("bluetooth", ACTION_BLUETOOTH_SETTINGS),
     Captioning("captioning", ACTION_CAPTIONING_SETTINGS),
@@ -91,7 +52,7 @@ public enum AndroidSettings {
     Sound("sound", ACTION_SOUND_SETTINGS),
     Storage("storage", ACTION_INTERNAL_STORAGE_SETTINGS),
     Sync("sync", ACTION_SYNC_SETTINGS),
-    TextToSpeech("text_to_speech", ACTION_TTS_SETTINGS),
+    TextToSpeech("text_to_speech", CustomAndroidSettings.ACTION_TTS_SETTINGS),
     Usage("usage", ACTION_USAGE_ACCESS_SETTINGS),
     UserDictionary("user_dictionary", ACTION_USER_DICTIONARY_SETTINGS),
     VoiceInput("voice_input", ACTION_VOICE_INPUT_SETTINGS),
@@ -99,11 +60,14 @@ public enum AndroidSettings {
     Wifi("wifi", ACTION_WIFI_SETTINGS),
     WifiIp("wifi_ip", ACTION_WIFI_IP_SETTINGS),
     Wireless("wireless", ACTION_WIRELESS_SETTINGS),
-    ZenMode("zen_mode", ACTION_ZEN_MODE_SETTINGS),
+    ZenMode("zen_mode", CustomAndroidSettings.ACTION_ZEN_MODE_SETTINGS),
     ZenModePriority("zen_mode_priority", ACTION_ZEN_MODE_PRIORITY_SETTINGS),
-    ZenModeBlockedEffects("zen_mode_blocked_effects", ACTION_ZEN_MODE_BLOCKED_EFFECTS_SETTINGS);
+    ZenModeBlockedEffects("zen_mode_blocked_effects", CustomAndroidSettings.ACTION_ZEN_MODE_BLOCKED_EFFECTS_SETTINGS);
 
+    /** JavaScript-facing option key */
     private final String value;
+
+    /** Android intent action */
     private final String setting;
 
     AndroidSettings(String value, String setting) {
@@ -111,8 +75,14 @@ public enum AndroidSettings {
         this.setting = setting;
     }
 
+    /**
+     * Resolves a JavaScript option key to an Android settings intent action.
+     *
+     * @param value the option key provided by JavaScript
+     * @return the Android intent action string, or {@code null} if not supported
+     */
     public static String getAction(String value) {
-        for (AndroidSettings setting : AndroidSettings.values()) {
+        for (AndroidSettings setting : values()) {
             if (setting.value.equals(value)) {
                 return setting.setting;
             }
