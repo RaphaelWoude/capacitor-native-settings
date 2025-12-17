@@ -1,4 +1,5 @@
 import { registerPlugin } from '@capacitor/core';
+
 import type { NativeSettingsPlugin } from './definitions';
 
 /**

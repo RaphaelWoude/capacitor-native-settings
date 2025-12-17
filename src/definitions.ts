@@ -73,7 +73,6 @@ export interface IOSOptions {
  * These values map directly to Android intent action strings.
  */
 export enum AndroidSettings {
-
   /**
    * Show settings for accessibility modules
    */

@@ -22,6 +22,18 @@ npx cap sync
 
 ## Example
 
+> **Breaking change (Capacitor 8)**
+>
+> Starting from Capacitor 8, this plugin no longer rejects promises from native code.
+> This is a consequence of changes in Capacitor’s native plugin APIs, which removed
+> or restricted direct promise rejection in iOS plugins.
+>
+> All plugin methods now always resolve and report errors via the returned object:
+> `{ success: false, error }`.
+>
+> See: https://capacitorjs.com/docs/updating/plugins/8-0
+
+
 > **Note**
 >
 > Starting from **v8**, plugin methods **never reject promises**.

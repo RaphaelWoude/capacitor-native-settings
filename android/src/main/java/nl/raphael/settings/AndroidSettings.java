@@ -12,7 +12,6 @@ import static android.provider.Settings.*;
  * Android intent action string.</p>
  */
 public enum AndroidSettings {
-
     Accessibility("accessibility", ACTION_ACCESSIBILITY_SETTINGS),
     Account("account", ACTION_ADD_ACCOUNT),
     AirplaneMode("airplane_mode", ACTION_AIRPLANE_MODE_SETTINGS),

@@ -1,4 +1,5 @@
 import { WebPlugin } from '@capacitor/core';
+
 import type { NativeSettingsPlugin, NativeSettingsResult } from './definitions';
 
 /**
@@ -7,10 +8,7 @@ import type { NativeSettingsPlugin, NativeSettingsResult } from './definitions';
  * @remarks
  * This plugin is not supported on the web platform.
  */
-export class NativeSettingsWeb
-  extends WebPlugin
-  implements NativeSettingsPlugin
-{
+export class NativeSettingsWeb extends WebPlugin implements NativeSettingsPlugin {
   async open(): Promise<NativeSettingsResult> {
     return {
       success: false,
