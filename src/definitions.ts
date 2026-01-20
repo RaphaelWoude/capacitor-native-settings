@@ -1,51 +1,77 @@
+/**
+ * Capacitor NativeSettings plugin interface.
+ *
+ * Provides access to native Android and iOS system settings screens.
+ */
 export interface NativeSettingsPlugin {
   /**
-   * Opens the specified options on android & ios.
-   * Note that the only supported option by Apple is "App". Using other options
-   * might break in future iOS versions or have your app rejected in the App Store.
+   * Opens the specified settings option on the current platform.
    *
-   * @param option PlatformOptions
-   * @see PlatformOptions
+   * @param options Platform-specific settings options.
+   * @returns A promise resolving to the operation result.
    */
-  open(option: PlatformOptions): Promise<{ status: boolean }>;
+  open(options: PlatformOptions): Promise<NativeSettingsResult>;
 
   /**
-   * Opens the specified option in android.
-   * Only use this if you have made sure the user is on android.
-   * This can be done by checking the platform before hand.
+   * Opens the specified Android settings screen.
    *
-   * @param option AndroidOptions
-   * @see AndroidOptions
+   * @param options Android settings options.
+   * @returns A promise resolving to the operation result.
    */
-  openAndroid(option: AndroidOptions): Promise<{ status: boolean }>;
+  openAndroid(options: AndroidOptions): Promise<NativeSettingsResult>;
 
   /**
-   * Opens the specified option on iOS.
-   * Only use this if you have made sure the user is on iOS.
-   * This can be done by checking the platform before hand.
+   * Opens the specified iOS settings screen.
    *
-   * Note that the only supported option by Apple is "App". Using other options
-   * might break in future iOS versions or have your app rejected in the App Store.
+   * @remarks
+   * Apple officially supports opening only the app-specific settings screen.
+   * Using other options may result in App Store rejection.
    *
-   * @param option IOSOptions
-   * @see IOSOptions
+   * @param options iOS settings options.
+   * @returns A promise resolving to the operation result.
    */
-  openIOS(option: IOSOptions): Promise<{ status: boolean }>;
+  openIOS(options: IOSOptions): Promise<NativeSettingsResult>;
 }
 
+/**
+ * Result returned by native settings operations.
+ */
+export interface NativeSettingsResult {
+  /** Indicates whether the operation succeeded. */
+  success: boolean;
+
+  /** Optional error message if the operation failed. */
+  error?: string;
+}
+
+/**
+ * Platform-specific options.
+ */
 export interface PlatformOptions {
   optionAndroid: AndroidSettings;
   optionIOS: IOSSettings;
 }
 
+/**
+ * Android-only options.
+ */
 export interface AndroidOptions {
   option: AndroidSettings;
 }
 
+/**
+ * iOS-only options.
+ */
 export interface IOSOptions {
   option: IOSSettings;
 }
 
+/**
+ * Android system settings identifiers.
+ *
+ * @remarks
+ * These values map directly to Android intent action strings.
+ */
 export enum AndroidSettings {
   /**
    * Show settings for accessibility modules
@@ -297,6 +323,13 @@ export enum AndroidSettings {
   ZenModeBlockedEffects = 'zen_mode_blocked_effects',
 }
 
+/**
+ * iOS system settings identifiers.
+ *
+ * @remarks
+ * Apple officially supports opening only the app-specific settings screen.
+ * Other values rely on undocumented URL schemes.
+ */
 export enum IOSSettings {
   /**
    * Settings > About page
