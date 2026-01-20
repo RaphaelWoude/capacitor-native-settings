@@ -1,11 +1,11 @@
 ## Versions
 
-- [Capacitor 8 Update](#capacitor-8-update)
+- [Version 8.x.x](#version-8xx)
 - [Version 4.x.x](#version-4xx)
 
 ---
 
-## Capacitor 8 Update
+## Version 8.x.x
 
 ### ⚠️ Breaking Change: Error Handling Strategy
 
@@ -43,7 +43,7 @@ See: [Updating Plugins to Capacitor 8](https://capacitorjs.com/docs/updating/plu
 
 ## Version 4.x.x
 
-### Capacitor 4
+### ⚠️ Breaking Change: Capacitor 4
 
 This plugin now supports Capacitor 4 only. Please run `npx cap sync` after updating this package.
 
