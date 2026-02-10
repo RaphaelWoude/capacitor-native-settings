@@ -1,6 +1,6 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { NativeSettingsPlugin, NativeSettingsResult } from './definitions';
+import type { NativeSettingsPlugin } from './definitions';
 
 /**
  * Web implementation of the NativeSettings plugin.
@@ -9,24 +9,21 @@ import type { NativeSettingsPlugin, NativeSettingsResult } from './definitions';
  * This plugin is not supported on the web platform.
  */
 export class NativeSettingsWeb extends WebPlugin implements NativeSettingsPlugin {
-  async open(): Promise<NativeSettingsResult> {
-    return {
-      success: false,
-      error: 'NativeSettings is not supported on the web platform.',
-    };
+  async open(): Promise<{ status: boolean }> {
+    return new Promise<any>((_resolve, reject) => {
+      reject(new Error('Not implemented for web.'));
+    });
   }
 
-  async openAndroid(): Promise<NativeSettingsResult> {
-    return {
-      success: false,
-      error: 'NativeSettings is not supported on the web platform.',
-    };
+  async openAndroid(): Promise<{ status: boolean }> {
+    return new Promise<any>((_resolve, reject) => {
+      reject(new Error('Not implemented for web.'));
+    });
   }
 
-  async openIOS(): Promise<NativeSettingsResult> {
-    return {
-      success: false,
-      error: 'NativeSettings is not supported on the web platform.',
-    };
+  async openIOS(): Promise<{ status: boolean }> {
+    return new Promise<any>((_resolve, reject) => {
+      reject(new Error('Not implemented for web.'));
+    });
   }
 }

@@ -25,13 +25,13 @@ public class NativeSettingsPlugin: CAPPlugin, CAPBridgedPlugin {
 
     /// Opens a system settings page (legacy key).
     @objc func open(_ call: CAPPluginCall) {
-        let option = call.getString("optionIOS", "")
+        let option = call.getString("optionIOS") ?? ""
         handleOpen(call: call, option: option)
     }
 
     /// Opens a system settings page.
     @objc func openIOS(_ call: CAPPluginCall) {
-        let option = call.getString("option", "")
+        let option = call.getString("option") ?? ""
         handleOpen(call: call, option: option)
     }
 
@@ -41,10 +41,7 @@ public class NativeSettingsPlugin: CAPPlugin, CAPBridgedPlugin {
         guard let url = implementation.resolveSettingsURL(for: option),
               UIApplication.shared.canOpenURL(url) else {
             log("Invalid or unsupported option:", option)
-            call.resolve([
-                "success": false,
-                "error": "Requested setting '\(option)' is not available on iOS."
-            ])
+            call.reject("Requested setting '\(option)' is not available on iOS.")
             return
         }
 

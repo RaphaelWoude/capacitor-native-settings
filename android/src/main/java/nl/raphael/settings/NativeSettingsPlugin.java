@@ -45,13 +45,13 @@ public class NativeSettingsPlugin extends Plugin {
 
     private void openInternal(PluginCall call, String option) {
         if (option == null) {
-            resolveError(call, "Missing option parameter");
+            call.reject("Missing option parameter");
             return;
         }
 
         String setting = AndroidSettings.getAction(option);
         if (setting == null) {
-            resolveError(call, "Unsupported Android setting: " + option);
+            call.reject("Unsupported Android setting: " + option);
             return;
         }
 
@@ -81,13 +81,6 @@ public class NativeSettingsPlugin extends Plugin {
     private void activityResult(PluginCall call, ActivityResult result) {
         JSObject response = new JSObject();
         response.put("success", true);
-        call.resolve(response);
-    }
-
-    private void resolveError(PluginCall call, String message) {
-        JSObject response = new JSObject();
-        response.put("success", false);
-        response.put("error", message);
         call.resolve(response);
     }
 }

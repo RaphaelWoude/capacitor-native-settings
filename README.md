@@ -87,7 +87,7 @@ Provides access to native Android and iOS system settings screens.
 ### open(...)
 
 ```typescript
-open(options: PlatformOptions) => Promise<NativeSettingsResult>
+open(options: PlatformOptions) => Promise<{ status: boolean; }>
 ```
 
 Opens the specified settings option on the current platform.
@@ -96,7 +96,7 @@ Opens the specified settings option on the current platform.
 | ------------- | ----------------------------------------------------------- | ----------------------------------- |
 | **`options`** | <code><a href="#platformoptions">PlatformOptions</a></code> | Platform-specific settings options. |
 
-**Returns:** <code>Promise&lt;<a href="#nativesettingsresult">NativeSettingsResult</a>&gt;</code>
+**Returns:** <code>Promise&lt;{ status: boolean; }&gt;</code>
 
 --------------------
 
@@ -104,7 +104,7 @@ Opens the specified settings option on the current platform.
 ### openAndroid(...)
 
 ```typescript
-openAndroid(options: AndroidOptions) => Promise<NativeSettingsResult>
+openAndroid(options: AndroidOptions) => Promise<{ status: boolean; }>
 ```
 
 Opens the specified Android settings screen.
@@ -113,7 +113,7 @@ Opens the specified Android settings screen.
 | ------------- | --------------------------------------------------------- | ------------------------- |
 | **`options`** | <code><a href="#androidoptions">AndroidOptions</a></code> | Android settings options. |
 
-**Returns:** <code>Promise&lt;<a href="#nativesettingsresult">NativeSettingsResult</a>&gt;</code>
+**Returns:** <code>Promise&lt;{ status: boolean; }&gt;</code>
 
 --------------------
 
@@ -121,7 +121,7 @@ Opens the specified Android settings screen.
 ### openIOS(...)
 
 ```typescript
-openIOS(options: IOSOptions) => Promise<NativeSettingsResult>
+openIOS(options: IOSOptions) => Promise<{ status: boolean; }>
 ```
 
 Opens the specified iOS settings screen.
@@ -130,22 +130,12 @@ Opens the specified iOS settings screen.
 | ------------- | ------------------------------------------------- | --------------------- |
 | **`options`** | <code><a href="#iosoptions">IOSOptions</a></code> | iOS settings options. |
 
-**Returns:** <code>Promise&lt;<a href="#nativesettingsresult">NativeSettingsResult</a>&gt;</code>
+**Returns:** <code>Promise&lt;{ status: boolean; }&gt;</code>
 
 --------------------
 
 
 ### Interfaces
-
-
-#### NativeSettingsResult
-
-Result returned by native settings operations.
-
-| Prop          | Type                 | Description                                     |
-| ------------- | -------------------- | ----------------------------------------------- |
-| **`success`** | <code>boolean</code> | Indicates whether the operation succeeded.      |
-| **`error`**   | <code>string</code>  | Optional error message if the operation failed. |
 
 
 #### PlatformOptions
