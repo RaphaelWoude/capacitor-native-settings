@@ -49,7 +49,7 @@ public class NativeSettingsPlugin: CAPPlugin, CAPBridgedPlugin {
             UIApplication.shared.open(url, options: [:]) { success in
                 log("Open result:", success)
                 call.resolve([
-                    "success": success
+                    "status": success
                 ])
             }
         }
