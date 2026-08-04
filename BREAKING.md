@@ -13,7 +13,7 @@ We have reverted the previous changes for error handling. Capacitor has since be
 ```javascript
 // Old behavior (v8.0.0)
 const result = await NativeSettings.open(...);
-if (!result.success) {
+if (!result.status) {
   console.error(result.error);
 }
 

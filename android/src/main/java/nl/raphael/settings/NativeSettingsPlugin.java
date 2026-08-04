@@ -80,7 +80,7 @@ public class NativeSettingsPlugin extends Plugin {
     @ActivityCallback
     private void activityResult(PluginCall call, ActivityResult result) {
         JSObject response = new JSObject();
-        response.put("success", true);
+        response.put("status", true);
         call.resolve(response);
     }
 }
